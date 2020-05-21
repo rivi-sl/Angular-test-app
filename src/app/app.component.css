@@ -1,0 +1,34 @@
+.rk-chat-container{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: black;
+}
+
+.rk-mcol-a{
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 0px;
+}
+
+.rk-mcol-b{
+    background-color: #e6e6e6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rk-mcol-c{
+    padding: 0px;
+    background-color: rgb(195, 195, 195);
+}
+
+.rk-navbar{
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #fcfafa;
+}
+
+.rk-chatbox{
+    width: 100%;
+}
