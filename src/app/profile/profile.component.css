@@ -1,0 +1,31 @@
+.rk-log{
+    /* width: 100%; */
+}
+
+.rk-logout{
+    margin: 10px auto;
+    display: block;
+    width: 50%;
+}
+
+.rk-username{
+    text-align: center;
+}
+
+.rk-userimg{
+    margin: 10px auto;
+    width: 80px;
+    border-radius: 10%;
+    display: block;
+    width: 50%;
+}
+
+.rk-login{
+    margin: 10px auto;
+    display: block;
+    width: 70%;
+}
+
+.rk-chatbox{
+    width: 100%;
+}

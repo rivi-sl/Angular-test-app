@@ -1,0 +1,11 @@
+<div class="rk-log" *ngIf="auth.user$ | async as user ; else showLogin">
+    <img class="rk-userimg" [src]="user.photoURL" alt="noImg">
+    <h6 class="rk-username">{{ user.displayName }}</h6>
+    <h6 class="rk-username">{{ user.email }}</h6>
+    <button class="rk-logout btn btn-secondary" (click)="auth.signOut()">Logout</button>
+  </div>
+  <ng-template #showLogin>
+    <div class="rk-log">
+      <button class="rk-login btn btn-secondary" (click)="auth.googleSignin()">Login with Google</button>
+    </div>
+</ng-template>

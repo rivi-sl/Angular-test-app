@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -48,36 +46,34 @@ export class AuthService {
        return this.router.navigate(['/']);
      }
 
-     private updateUserData(user){
+     private async updateUserData(user){
        
       const usersDb = this.afs.doc(`users/${user.uid}`);
       const usersDbchanges = this.afs.doc(`users/${user.uid}`).valueChanges();
       var joinedIntext;
-      // this.itemDoc = this.afs.doc<Item>(`users/${user.uid}`);
-      // this.item = this.itemDoc.valueChanges();
 
       this.afs.collection("users").doc(`${user.uid}`).ref.get()
       .then(async function(doc) {
-        console.log(doc.data());
-      });
-
-      // if(doc.data().joinedIn == ""){
-      //   joinedIntext = new Date();
-      // }else{
-      //   joinedIntext = await doc.data().joinedIn;
-      // }
-      
-      // console.log(this.item.joinedIn);
-
+        if(!(doc.data().joinedIn)){
+          joinedIntext = new Date();
+        }else{
+          joinedIntext = await doc.data().joinedIn;
+        }
         const data = {
           uid: user.uid, 
           email: user.email, 
           displayName: user.displayName, 
           photoURL: user.photoURL,
-          joinedIn: joinedIntext
+          joinedIn: await joinedIntext
         }
 
         usersDb.set(data);
+      });
+
+     
+      
+
+        
 
       }
 

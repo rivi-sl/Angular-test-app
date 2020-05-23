@@ -29,30 +29,11 @@
     background-color: #fcfafa;
 }
 
-.rk-log{
-    width: 100%;
+.rk-nav-logoholder{
+    width: 100%
 }
 
-.rk-logout{
+.rk-nav-logo{
     float: right;
-    margin: 0 0 0 10px;
-}
-
-.rk-username{
-    float: right;
-    margin: 10px 10px 0 0;
-}
-
-.rk-userimg{
-    float: right;
-    width: 40px;
-    border-radius: 50%;
-}
-
-.rk-login{
-    float: right;
-}
-
-.rk-chatbox{
-    width: 100%;
+    width: 70px;
 }
