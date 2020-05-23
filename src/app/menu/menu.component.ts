@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItemsOptions } from '../menuitemsoptions';
+import { MenuItems } from '../menuitems';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  items = MenuItems;
+  selectedOption: MenuItemsOptions;
+  onSelect(item: MenuItemsOptions): void {
+    this.selectedOption = item;
+  }
 
   constructor() { }
 

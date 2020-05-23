@@ -19,6 +19,11 @@
    color: #fff;
 }
 
+.rk-micons a.selected{
+    background-color: #185bd89c;
+    color: #fff;
+}
+
 .rk-micons a:first-child{
     margin-top: 20px;
     margin-bottom: 80px;

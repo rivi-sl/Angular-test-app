@@ -7,13 +7,15 @@ import { CommonchatComponent } from './commonchat/commonchat.component';
 import { PrivatechatComponent } from './privatechat/privatechat.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/global', pathMatch: 'full' },
-  { path: 'global', component: GlobalchatComponent },
-  { path: 'common', component: CommonchatComponent },
-  { path: 'private', component: PrivatechatComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: '', redirectTo: '/common', pathMatch: 'full' },
+  { path: 'common', component: GlobalchatComponent, canActivate: [AngularFireAuthGuard] },
+  { path: 'group', component: CommonchatComponent, canActivate: [AngularFireAuthGuard] },
+  { path: 'private', component: PrivatechatComponent, canActivate: [AngularFireAuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AngularFireAuthGuard] },
 ];
 
 @NgModule({

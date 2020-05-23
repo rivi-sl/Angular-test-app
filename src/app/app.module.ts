@@ -9,6 +9,13 @@ import { CommonchatComponent } from './commonchat/commonchat.component';
 import { PrivatechatComponent } from './privatechat/privatechat.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +27,11 @@ import { SettingsComponent } from './settings/settings.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'rivi-k'),
+    AngularFirestoreModule, 
+    AngularFireAuthModule, 
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
