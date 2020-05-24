@@ -1,1 +1,8 @@
 <h2 class="rk-chat-topic">{{ title | uppercase }}</h2>
+
+<ul class="rk-users">
+    <li *ngFor="let user of users | async">
+        <img class="rk-user-img" [src]="user.photoURL" alt="img">
+      {{ user.displayName }}
+    </li>
+</ul>

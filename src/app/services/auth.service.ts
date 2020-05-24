@@ -54,10 +54,10 @@ export class AuthService {
 
       this.afs.collection("users").doc(`${user.uid}`).ref.get()
       .then(async function(doc) {
-        if(!(doc.data().joinedIn)){
-          joinedIntext = new Date();
-        }else{
+        if(doc.data()){
           joinedIntext = await doc.data().joinedIn;
+        }else{
+          joinedIntext = new Date();
         }
         const data = {
           uid: user.uid, 

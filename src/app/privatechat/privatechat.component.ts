@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable, of } from 'rxjs';
+
+export interface Item { name: string; }
+
 @Component({
   selector: 'app-privatechat',
   templateUrl: './privatechat.component.html',
@@ -8,7 +13,12 @@ import { Component, OnInit } from '@angular/core';
 export class PrivatechatComponent implements OnInit {
   title = "Private Chat"
 
-  constructor() { }
+  private itemsCollection: AngularFirestoreCollection<Item>;
+  users: Observable<Item[]>;
+  constructor(private afs: AngularFirestore) {
+    this.itemsCollection = afs.collection<Item>('users');
+    this.users = this.itemsCollection.valueChanges();
+  }
 
   ngOnInit(): void {
   }
