@@ -1,8 +1,20 @@
 <h2 class="rk-chat-topic">{{ title | uppercase }}</h2>
 
 <ul class="rk-users">
-    <li *ngFor="let user of users | async">
-        <img class="rk-user-img" [src]="user.photoURL" alt="img">
+  <ng-container>
+    <li *ngFor="let user of users | async" (click)="friendAdd(user)">
+      <img class="rk-user-img" [src]="user.photoURL" alt="img">
       {{ user.displayName }}
     </li>
+    </ng-container>
 </ul>
+<div *ngIf="selectedUser">
+  <hr>
+  <h5>Selected Friend</h5>
+  <div class="rk-selected-user">
+    <img class="rk-suser-img" [src]="selectedUser.photoURL" alt="img">
+    {{ selectedUser.displayName }}
+  </div>
+</div>
+<hr>
+<h5>Friends</h5>

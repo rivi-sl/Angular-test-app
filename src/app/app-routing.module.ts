@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
 
 import { GlobalchatComponent } from './globalchat/globalchat.component';
 import { CommonchatComponent } from './commonchat/commonchat.component';
 import { PrivatechatComponent } from './privatechat/privatechat.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './profile/profile.component';
+
+import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
 
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
@@ -16,7 +17,14 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'common', component: GlobalchatComponent, canActivate: [AngularFireAuthGuard] },
   { path: 'group', component: CommonchatComponent, canActivate: [AngularFireAuthGuard] },
-  { path: 'private', component: PrivatechatComponent, canActivate: [AngularFireAuthGuard] },
+  { path: 'private', component: PrivatechatComponent, canActivate: [AngularFireAuthGuard],
+    children:
+  [{
+    path: ':id',
+    component: PrivatechatIDComponent,
+    // outlet: 'chatbox' 
+  }]},
+    
   { path: 'settings', component: SettingsComponent, canActivate: [AngularFireAuthGuard] },
 ];
 
@@ -25,4 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule { }3

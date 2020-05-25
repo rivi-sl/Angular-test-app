@@ -17,6 +17,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { ChatboxComponent } from './chatbox/chatbox.component';
+import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { environment } from '../environments/environment';
     CommonchatComponent,
     PrivatechatComponent,
     SettingsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatboxComponent,
+    PrivatechatIDComponent
   ],
   imports: [
     BrowserModule,

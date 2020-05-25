@@ -1,7 +1,8 @@
 <div class="rk-micons">
-  <a *ngFor="let item of items" [class.selected]="item === selectedOption" (click)="onSelect(item)" routerLink="{{ item.link }}">
+  <a *ngFor="let item of items" [class.selected]="item === selectedOption" (click)="onSelect(item)"  [routerLink]="[{ outlets: { primary: item.link } }]"> 
       <span class="material-icons">
         {{ item.icon }}
       </span>
   </a>
 </div>
+<!-- , chatbox: ['[private/user.id]']  -->
