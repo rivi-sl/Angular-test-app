@@ -1,3 +1,16 @@
 <div class="rk-name-box">
     <h3 class="rk-friend-name">{{ (friend | async)?.displayName }}</h3>
 </div>
+
+<div  class="rk-chat-area" *ngIf="chat.text">
+    <div class="rk-chat-text rk-left-chat">
+        Hi, This is RIVI /-/ app!
+    </div>
+    <div class="rk-chat-text rk-right-chat">
+        {{ chat.text }}
+    </div>
+</div>
+
+<div class="rk-text-box">
+    <input [(ngModel)]="chat.text" type="textarea" placeholder="Type here..."/>
+</div>

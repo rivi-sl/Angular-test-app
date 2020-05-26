@@ -31,8 +31,11 @@
 
 .rk-selected-user{
     background-color: #6ca0ff;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .rk-suser-img{
     width: 50px;
+    border-radius: 5px;
 }

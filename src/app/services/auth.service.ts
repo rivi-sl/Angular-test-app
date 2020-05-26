@@ -12,6 +12,8 @@ import { MenuItems } from '../menuitems';
 import { User } from './user.model';
 
 export interface Item { name: string; }
+export interface MyID { id: string; }
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,7 @@ export interface Item { name: string; }
 export class AuthService {
 
   user$: Observable<any>;
+  userid: Observable<any>;
   private itemDoc: AngularFirestoreDocument<Item>;
   item: Observable<Item>;
   
