@@ -19,7 +19,12 @@ export class PrivatechatComponent implements OnInit {
   selectedUser: AddUser;
   friendAdd(user: AddUser): void {
     this.selectedUser = user;
-    this.router.navigate([`private/${user.uid}`, { outlets: { chatbox: this.selectedUser.uid  }}]);
+    this.router.navigate([
+      {
+        outlets: { chatbox: ['private', user.uid] },
+      },
+    ], 
+    { skipLocationChange: true });
   }
 
   private itemsCollection: AngularFirestoreCollection<Item>;

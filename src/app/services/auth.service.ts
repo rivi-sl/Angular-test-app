@@ -6,6 +6,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { MenuItemsOptions } from '../menuitemsoptions';
+import { MenuItems } from '../menuitems';
 
 import { User } from './user.model';
 
@@ -19,6 +21,7 @@ export class AuthService {
   user$: Observable<any>;
   private itemDoc: AngularFirestoreDocument<Item>;
   item: Observable<Item>;
+  
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -69,12 +72,6 @@ export class AuthService {
 
         usersDb.set(data);
       });
-
-     
-      
-
-        
-
       }
 
 }

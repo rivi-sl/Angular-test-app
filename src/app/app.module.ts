@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
+import { NoChatComponent } from './no-chat/no-chat.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.componen
     SettingsComponent,
     ProfileComponent,
     ChatboxComponent,
-    PrivatechatIDComponent
+    PrivatechatIDComponent,
+    NoChatComponent
   ],
   imports: [
     BrowserModule,

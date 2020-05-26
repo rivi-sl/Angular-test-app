@@ -14,17 +14,17 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/profile', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/profile', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
   { path: 'common', component: GlobalchatComponent, canActivate: [AngularFireAuthGuard] },
   { path: 'group', component: CommonchatComponent, canActivate: [AngularFireAuthGuard] },
-  { path: 'private', component: PrivatechatComponent, canActivate: [AngularFireAuthGuard],
-    children:
-  [{
-    path: ':id',
+  { path: 'private', component: PrivatechatComponent, canActivate: [AngularFireAuthGuard] },
+  {
+    path: 'private/:id',
     component: PrivatechatIDComponent,
-    // outlet: 'chatbox' 
-  }]},
-    
+    outlet: 'chatbox',
+    canActivate: [AngularFireAuthGuard]
+  },
   { path: 'settings', component: SettingsComponent, canActivate: [AngularFireAuthGuard] },
 ];
 
@@ -33,4 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { }3
+export class AppRoutingModule { }
