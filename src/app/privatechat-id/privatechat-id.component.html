@@ -2,15 +2,61 @@
     <h3 class="rk-friend-name">{{ (friend | async)?.displayName }}</h3>
 </div>
 
-<div  class="rk-chat-area" *ngIf="chat.text">
-    <div class="rk-chat-text rk-left-chat">
-        Hi, This is RIVI /-/ app!
+<div  class="rk-chat-area">
+    <div class="chatbox">
+        <div class="chat">
+    <div class="chatout">
+    <span class="message"> Hello!</span>
+    <span class="timestampout">09.00 am</span>
     </div>
-    <div class="rk-chat-text rk-right-chat">
-        {{ chat.text }}
+    <div class="chatin">
+    <span class="message"> Hello</span>
+    <span class="timestampin">09.02 am</span>
     </div>
-</div>
-
-<div class="rk-text-box">
-    <input [(ngModel)]="chat.text" type="textarea" placeholder="Type here..."/>
+    <div class="chatout">
+    <span class="message"> How are you?</span>
+    <span class="timestampout">09.03 am</span>
+    </div>
+    <div class="chatin">
+    <span class="message">  I'm fine!</span>
+    <span class="timestampin">09.05 am</span>
+    </div>
+    <div class="chatout">
+    <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+    <span class="timestampout">09.10 am</span> 
+    </div>
+    <div class="chatin">
+    <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+    <span class="timestampin">09.10 am</span> 
+    </div>
+    <div class="chatout">
+    <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+    <span class="timestampout">09.10 am</span> 
+    </div>
+    
+    <div class="incoming">
+    <div class="pen">
+    <i class="material-icons">
+      create
+    </i>
+    </div> 
+    <div class="line">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="sendarea">
+    <div class="emoji">
+    <i class="material-icons send">emoji_emotions</i>
+    </div>
+    <input>
+    <div class="btn">
+    <i class="material-icons send">send</i>
+    </div>
+    </div>
+    </div>
+    
 </div>
