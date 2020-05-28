@@ -21,6 +21,8 @@
     padding: 0px;
     background-color: rgb(195, 195, 195);
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    /* overflow: hidden; */
 }
 
 .rk-navbar{
@@ -37,4 +39,8 @@
 .rk-nav-logo{
     float: right;
     width: 70px;
+}
+
+.rk-chat-box{
+    height: 100%;
 }

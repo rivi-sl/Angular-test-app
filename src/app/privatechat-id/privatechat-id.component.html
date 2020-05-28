@@ -1,18 +1,107 @@
 <div class="rk-name-box">
-    <h3 class="rk-friend-name">{{ (friend | async)?.creaeted }}</h3>
+  <h3 class="rk-friend-name">{{ (friend | async)?.displayName }}</h3>
 </div>
 
-<div  class="rk-chat-area">
-    <div class="rk-chat-text rk-left-chat">
-        Hi, This is RIVI /-/ app!
+<div class="rk-chat-area">
+  <div class="chatbox">
+    <div class="chat">
+      <div class="chatout">
+        <span class="message"> Hello!</span>
+        <span class="timestampout">09.00 am</span>
+      </div>
+      <div class="chatin">
+        <span class="message"> Hello</span>
+        <span class="timestampin">09.02 am</span>
+      </div>
+      <div class="chatout">
+        <span class="message"> How are you?</span>
+        <span class="timestampout">09.03 am</span>
+      </div>
+      <div class="chatin">
+        <span class="message"> I'm fine!</span>
+        <span class="timestampin">09.05 am</span>
+      </div>
+      <div class="chatout">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampout">09.10 am</span>
+      </div>
+      <div class="chatin">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampin">09.10 am</span>
+      </div>
+      <div class="chatout">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampout">09.10 am</span>
+      </div>
+      <div class="chatin">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampin">09.10 am</span>
+      </div> <div class="chatout">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampout">09.10 am</span>
+      </div>
+      <div class="chatin">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampin">09.10 am</span>
+      </div> <div class="chatout">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampout">09.10 am</span>
+      </div>
+      <div class="chatin">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampin">09.10 am</span>
+      </div>
+      <div class="chatout">
+        <span class="message"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
+        <span class="timestampout">09.10 am</span>
+      </div>
+
+      <div class="incoming">
+        <div class="pen">
+          <i class="material-icons">
+            create
+          </i>
+        </div>
+        <div class="line">
+          <div class="box1"></div>
+          <div class="box2"></div>
+          <div class="box3"></div>
+        </div>
+      </div>
     </div>
-    <div class="rk-chat-text rk-right-chat" >
-        {{ PMessagesLoad }}
+
+    
+  </div>
+
+</div>
+
+<div class="sendarea">
+    <div class="emoji">
+      <span class="material-icons send">emoji_emotions</span>
     </div>
-
-    <!-- *ngFor="let message of PMessagesLoad" -->
-</div>
-
-<div class="rk-text-box">
-    <input type="textarea" placeholder="Type here..."/>
-</div>
+    <div class="emoji">
+        <span class="material-icons send">star</span>
+      </div>
+    <input>
+    <div class="emoji">
+      <span class="material-icons send">send</span>
+    </div>
+  </div>
