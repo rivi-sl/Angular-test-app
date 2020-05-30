@@ -11,16 +11,26 @@
     margin-bottom: 20px;
     padding: 10px;
     transition: 0.2s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .rk-micons a:hover{
    background-color: #6ca0ff9c;
-   border-left: 10px solid #6ca0ff;
+   border-left: 20px solid #ffffff;
    color: #fff;
 }
 
 .rk-micons a.selected{
     background-color: #6ca0ff;
+    border-left: 30px solid #ffffff;
+    border-radius: 10px;
+    margin-right: 10px;
     color: #fff;
 }
 

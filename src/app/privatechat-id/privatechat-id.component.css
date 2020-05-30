@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
-
-.rk-name-box{
-    width: 100%;
-    background: #cddfff;
-    padding: 10px 50px;
-    transition: 1s;
-    height: 12%;
+.rk-name-box {
+  width: 100%;
+  background: rgb(205, 223, 255);
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2), 5px 10px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px 50px;
+  transition: 1s;
+  height: 12%;
 }
 
-.rk-chat-area{
+.rk-chat-area {
   height: 65%;
   padding: 100px;
   overflow-y: scroll;
@@ -18,34 +15,43 @@
   margin: 0 auto;
 }
 
-.chatbox{
-    /* background-size: 100% auto; */
-    /* background-blend-mode: overlay; */
-    width: 100%;
-    height: auto;
-    background-color: #424141;
-    display: flex;
-    flex-direction: column;
-
+.rk-chat-area::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.rk-chat-area::-webkit-scrollbar-track {
+  padding: 10px;
+  background: #f1f1f1; 
+}
+  
+.rk-chat-area::-webkit-scrollbar-thumb {
+  background: #888; 
 }
 
-.chat{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    align-self: flex-end;
+.rk-chat-area::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
-.chat::-webkit-scrollbar {
-    display: none;
-  }
+.rk-chat-box {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
 
-.chatin{
+.rk-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  align-self: flex-end;
+}
+
+.chatin {
   align-self: flex-start;
   margin: 5px;
-  background-color: #222222;
   padding: 5px;
+  background-color: rgba(83, 83, 83, 0.8);
   align-items: center;
   border-radius: 10px 10px 10px 0px;
   display: flex;
@@ -55,11 +61,11 @@
   display: table;
 }
 
-.chatout{
+.chatout {
   align-self: flex-end;
   margin: 5px;
-  background-color: forestgreen;
   padding: 5px;
+  background-color: rgba(108, 160, 255, 0.9);
   display: table;
   flex-direction: column;
   align-items: center;
@@ -69,31 +75,45 @@
   height: auto;
 }
 
-.message{
-    font-family: 'Montserrat';
-  font-size: 14px;
+.message {
+  font-size: 12px;
   font-weight: 500;
   color: white;
   display: table-row;
 }
 
-.timestampin{
-    font-family: 'Montserrat';
-    font-size: 7px;
-    font-weight: 500;
-    color: white;
-    align-self: flex-start;
-    display: table-row;
+.timestampin {
+  font-size: 9px;
+  font-weight: 500;
+  color: white;
+  align-self: flex-start;
+  display: table-row;
 }
 
-.timestampout{
-    font-family: 'Montserrat';
-    font-size: 7px;
-    font-weight: 500;
-    color: white;
-    align-self: flex-end;
-    display: table-row;
-    text-align: right;
+.timestampout {
+  font-family: 'Montserrat';
+  font-size: 9px;
+  font-weight: 500;
+  color: white;
+  align-self: flex-end;
+  display: table-row;
+  text-align: right;
+}
+
+
+.incoming {
+  align-self: flex-start;
+  margin: 5px;
+  background-color: rgba(83, 83, 83, 0.8);
+  padding: 5px;
+  align-items: center;
+  overflow: hidden;
+  min-height: 10px;
+  border-radius: 10px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  min-width: 50px;
+  min-height: 25px;
 }
 
 .material-icons {
@@ -115,144 +135,145 @@
   color: white;
 }
 
-.material-icons.send{
-font-size: 18px;
- text-align: center;
- flex: 1;
+.line {
+  margin-top: -20px;
 }
 
-.line{
-margin-top: -20px;
-}
-.box1{
+.box1 {
   display: inline-block;
   height: 5px;
   width: 5px;
   background-color: white;
   opacity: 0;
   animation: box1 1.5s infinite;
-    animation-timing-function: ease-out; 
- animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
   border-radius: 1.5px;
 }
-.box2{
+
+.box2 {
   display: inline-block;
   height: 5px;
   width: 5px;
-   background-color: white;
+  background-color: white;
   animation-delay: 0.5s;
   animation: box2 1.5s infinite;
-    animation-timing-function: ease; 
- animation-fill-mode: forwards;
-   border-radius: 1.5px;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  border-radius: 1.5px;
 }
-.box3{
+
+.box3 {
   display: inline-block;
   height: 5px;
   width: 5px;
   background-color: white;
   animation-delay: 1s;
   animation: box3 1.5s infinite;
-    animation-timing-function: ease; 
- animation-fill-mode: forwards;
-   border-radius: 1.5px;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  border-radius: 1.5px;
 }
 
-.pen{
+.pen {
   margin-left: -3.1px;
   margin-bottom: 5px;
   animation: pen1 1.5s infinite;
-  animation-timing-function: ease; 
- animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
-@keyframes pen1{
-  from{margin-left: -3.1px;}
-  to{margin-left: 15px;}
+@keyframes pen1 {
+  from {
+    margin-left: -3.1px;
+  }
+
+  to {
+    margin-left: 15px;
+  }
 }
 
-@keyframes box1{
-  0%{opacity:0;}
-  33%{opacity:1;}
+@keyframes box1 {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 1;
+  }
 }
 
-@keyframes box2{
-   0%{opacity:0;}
-  33%{opacity:0;}
-  66%{opacity:1;}
-  100%{opacity:0;}
+@keyframes box2 {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
-@keyframes box3{
-   0%{opacity:0;}
-  33%{opacity:0;}
-  66%{opacity:0;}
-  100%{opacity:1;}
+@keyframes box3 {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-
-.incoming{
-  align-self: flex-start;
+.sendarea {
+  width: 45%;
   margin: 5px;
-  background-color: #222222;
-  padding: 5px;
-  align-items: center;
-  overflow: hidden;
-  min-height: 10px;
-  border-radius: 10px 10px 10px 0px;
+  height: 7.5%;
   display: flex;
-  flex-direction: column;
-  min-width: 50px;
-  min-height: 25px;
+  flex-direction: row;
+  padding: 5px;
+  position: fixed;
 }
 
-.sendarea{
-width: 45%;
-margin: 5px;
-height: 7.5%;
-display: flex;
-flex-direction: row;
-padding: 5px;
-position: fixed;
+input {
+  flex: 6;
+  margin: 2px;
+  height: 35px;
+  align-self: center;
+  border-radius: 50px;
+  border: none;
+  padding: 10px;
+  word-wrap: break-word;
+  overflow-y: auto;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  font-weight: 500;
 }
 
-input{
-    flex: 6;
-    margin: 2px;
-    height: 35px;
-    align-self: center;
-    border-radius: 50px;
-    border: none;
-    padding: 10px;
-    word-wrap: break-word;
-    overflow-y: auto;
-    font-family: 'Montserrat';
-    font-size: 14px;
-    font-weight: 500;
+.emoji {
+  border-radius: 50%;
+  background-color: white;
+  padding: 7px;
+  margin: 2px;
+  align-self: center;
+  display: flex;
 }
 
-.btn{
-   width: 35px;
-   height: 35px;
-   border-radius: 50%;
-    background-color: teal;
-    margin: 2px;
-    margin-right:10px;
-    align-self: center;
-    text-align: center;
-    display: flex;
-}
-
-.emoji{
-    border-radius: 50%;
-    background-color: white;
-    padding: 7px;
-    margin: 2px;
-    align-self: center;
-    display: flex;
- }
-
- .emoji span{
-   font-size: 170%;
+.emoji span {
+  font-size: 170%;
   color: #393e41;
 }

@@ -1,13 +1,20 @@
 <h2 class="rk-chat-topic">{{ title | uppercase }}</h2>
 
 <div class="rk-log" *ngIf="auth.user$ | async as user ; else showLogin">
-    <img class="rk-userimg" [src]="user.photoURL" alt="noImg">
-    <h6 class="rk-username">{{ user.displayName }}</h6>
-    <h6 class="rk-username">{{ user.email }}</h6>
-    <button class="rk-logout btn btn-secondary" (click)="auth.signOut()">Logout</button>
+  <img class="rk-userimg" [src]="user.photoURL" alt="noImg">
+  <h6 class="rk-username">{{ user.displayName }}</h6>
+  <h6 class="rk-email">({{ user.email }})</h6>
+  <button class="rk-logout btn btn-secondary" (click)="auth.signOut()">Logout</button>
+  <!-- Still Developing -> -->
+  <div class="rk-log">
+    <button class="rk-login btn btn-secondary">Change Name</button>
   </div>
-  <ng-template #showLogin>
-    <div class="rk-log">
-      <button class="rk-login btn btn-secondary" (click)="auth.googleSignin()">Login with Google</button>
-    </div>
+  <div class="rk-log">
+    <button class="rk-login btn btn-danger">Remove Account</button>
+  </div>
+</div>
+<ng-template #showLogin>
+  <div class="rk-log">
+    <button class="rk-login btn btn-secondary" (click)="auth.googleSignin()">Login with Google</button>
+  </div>
 </ng-template>

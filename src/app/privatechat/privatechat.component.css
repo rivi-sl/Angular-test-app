@@ -7,9 +7,30 @@
     width: 100%;
     height: 150px;
     overflow: hidden;
-    overflow-y:scroll;
+    overflow-y: scroll;
     padding: 0;
     margin: 0 auto;
+}
+
+.rk-users::-webkit-scrollbar {
+   width: 10px;
+}
+  
+  /* Track */
+.rk-users::-webkit-scrollbar-track {
+   background: #f1f1f1; 
+   border-radius: 10px;
+}
+   
+  /* Handle */
+.rk-users::-webkit-scrollbar-thumb {
+   background: #888; 
+   border-radius: 10px;
+}
+  
+  /* Handle on hover */
+.rk-users::-webkit-scrollbar-thumb:hover {
+   background: #555; 
 }
 
 .rk-users li{

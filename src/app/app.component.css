@@ -2,34 +2,32 @@
     height: 100%;
     width: 100%;
     margin: 0px;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .rk-mcol-a{
     width: 100%;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
     padding: 0px;
 }
 
 .rk-mcol-b{
-    background-color: #e6e6e6;
+    background-color: rgba(230, 230, 230, 0.85);
     font-family: 'Montserrat', sans-serif;
 }
 
 .rk-mcol-c{
     padding: 0px;
-    background-color: rgb(195, 195, 195);
+    background-color: rgba(195, 195, 195, 0.2);
     font-family: 'Montserrat', sans-serif;
     height: 100%;
-    /* overflow: hidden; */
 }
 
 .rk-navbar{
-    /* font-family: 'Montserrat', sans-serif; */
     width: 100%;
     padding: 20px 30px;
-    background-color: #fcfafa;
+    background-color: rgba(252, 250, 250, 0.9);
 }
 
 .rk-nav-logoholder{
