@@ -2,21 +2,48 @@
   width: 100%;
   background: rgb(205, 223, 255);
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2), 5px 10px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 20px 50px;
+  /* padding: 20px 50px; */
   transition: 1s;
   height: 12%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.rk-nameplate{
+  display: flex;
+  flex-direction: column;
+}
+
+.rk-chatsend{
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.rk-status{
+  font-family: 'Montserrat';
+  font-size: 12px;
+  margin: 0;
 }
 
 .rk-chat-area {
   height: 65%;
+  width: 100%;
   padding: 100px;
   overflow-y: scroll;
   padding: 0;
   margin: 0 auto;
 }
 
+.rk-friend-name{
+  font-family: 'Montserrat';
+  font-size: 20px;
+  margin: 0;
+}
+
 .rk-chat-area::-webkit-scrollbar {
-  width: 10px;
+  width: 7.5px;
 }
  
 .rk-chat-area::-webkit-scrollbar-track {
@@ -45,6 +72,12 @@
   flex-direction: column;
   padding: 5px;
   align-self: flex-end;
+}
+
+.rk-name-options{
+ flex: 1;
+ text-align: right;
+ margin-right: 10px;
 }
 
 .chatin {
@@ -133,6 +166,19 @@
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
   color: white;
+}
+
+.material-icons.profile{
+  color: black;
+ font-size: 40px;
+ margin: 20px;
+}
+
+.material-icons.menu{
+  color: black;
+ font-size: 30px;
+ margin-left: 8px;
+
 }
 
 .line {
@@ -240,7 +286,7 @@
 }
 
 .sendarea {
-  width: 45%;
+  width: 66%;
   margin: 5px;
   height: 7.5%;
   display: flex;
