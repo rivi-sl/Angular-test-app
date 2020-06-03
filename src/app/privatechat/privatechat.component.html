@@ -3,8 +3,11 @@
 <ul class="rk-users">
   <ng-container>
     <li *ngFor="let user of users | async" (click)="friendAdd(user)">
-      <img class="rk-user-img" [src]="user.photoURL" alt="img">
-      {{ user.displayName }}
+     <div class="rk-list-item">
+      <img class="rk-user-img" [src]="user.photoURL" alt="img" >
+      <div class="rk-name">{{ user.displayName }}</div>
+      <span class="tooltiptext">{{ user.displayName }}</span>
+    </div>
     </li>
     </ng-container>
 </ul>
