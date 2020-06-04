@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
-    // this.selectedOption = this.items[0];
+    this.selectedOption = this.items[0];
   }
 
 }

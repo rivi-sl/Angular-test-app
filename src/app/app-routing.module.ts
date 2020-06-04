@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'common', component: GlobalchatComponent, canActivate: [AngularFireAuthGuard] },
   { path: 'group', component: CommonchatComponent, canActivate: [AngularFireAuthGuard] },
-  { path: 'private', component: PrivatechatComponent },
+  { path: 'private', component: PrivatechatComponent, canActivate: [AngularFireAuthGuard]  },
   {
     path: 'private/:id',
     component: PrivatechatIDComponent,
