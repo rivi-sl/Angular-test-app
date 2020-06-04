@@ -21,17 +21,16 @@
 }
 
 .rk-micons a:hover{
-   background-color: #6ca0ff9c;
-   border-left: 20px solid #ffffff;
+   background-color: #007bff;
+   border-left: 7.5px solid #0326669c;
    color: #fff;
 }
 
 .rk-micons a.selected{
-    background-color: #6ca0ff;
-    border-left: 30px solid #ffffff;
-    border-radius: 10px;
-    margin-right: 10px;
+    background-color: #007bff;
+    border-left: 7.5px solid #0326669c;
     color: #fff;
+    border-radius: 0 10px 10px 0;
 }
 
 .rk-micons a:first-child{
@@ -43,4 +42,17 @@
     font-size: 3rem;
 }
 
+@media only screen and (max-width: 800px) {
+    .rk-micons a span{
+        font-size: 6vw;
+    }
+    .rk-micons a:hover{
+        margin-left: 0px;
+        border-left: 4px solid #0326669c;
+     }
 
+     .rk-micons a.selected{
+        border-left: 0px;
+        color: #fff;
+    }
+  }

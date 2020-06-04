@@ -1,7 +1,16 @@
 <div class="rk-name-box">
+  <i class="material-icons profile">face</i>
+  <div class="rk-nameplate">
   <h3 class="rk-friend-name">{{ (friend | async)?.displayName }}</h3>
+  <span class="rk-status">Last online at 10.20 am</span>
 </div>
-
+<div class="rk-name-options">
+  <i class="material-icons menu">search</i>
+<i class="material-icons menu">attach_file</i>
+<i class="material-icons menu">more_vert</i>
+</div>
+</div>
+<div class="rk-chatsend">
 <div class="rk-chat-area">
   <div class="rk-chat-box">
     <div class="rk-chat">
@@ -90,12 +99,12 @@
       </div> -->
       
       <div *ngFor="let messageitem of messageitems | async" class="chats"> 
-          <div *ngIf="messageitem.sentBy; else elseBlock" class="chatin">
+          <div *ngIf="messageitem.sentBy; else elseBlock" class="chatout">
             <span class="message">{{ messageitem.message }}</span>
             <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
           </div>
           <ng-template #elseBlock>
-            <div class="chatout">
+            <div class="chatin">
               <span class="message">{{ messageitem.message }}</span>
               <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
             </div>
@@ -122,4 +131,5 @@
   <div class="emoji">
     <span class="material-icons send" (click)="sendMessage()">send</span>
   </div>
+</div>
 </div>
