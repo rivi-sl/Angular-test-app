@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
 import { NoChatComponent } from './no-chat/no-chat.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NoChatComponent } from './no-chat/no-chat.component';
     ProfileComponent,
     ChatboxComponent,
     PrivatechatIDComponent,
-    NoChatComponent
+    NoChatComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@
 <div class="rk-chat-area">
   <div class="rk-chat-box">
     <div class="rk-chat">
-      <div class="chatout">
+      <!-- <div class="chatout">
         <span class="message"> Hello!</span>
         <span class="timestampout">09.00 am</span>
       </div>
@@ -74,9 +74,9 @@
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</span>
         <span class="timestampout">09.10 am</span>
-      </div>
+      </div> -->
 
-      <div class="incoming">
+      <!-- <div class="incoming">
         <div class="pen">
           <i class="material-icons">
             create
@@ -87,6 +87,24 @@
           <div class="box2"></div>
           <div class="box3"></div>
         </div>
+      </div> -->
+      
+      <div *ngFor="let messageitem of messageitems | async" class="chats"> 
+          <div *ngIf="messageitem.sentBy; else elseBlock" class="chatin">
+            <span class="message">{{ messageitem.message }}</span>
+            <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
+          </div>
+          <ng-template #elseBlock>
+            <div class="chatout">
+              <span class="message">{{ messageitem.message }}</span>
+              <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
+            </div>
+          </ng-template>
+        </div>
+      
+      <div class="chatout" *ngIf="chat">
+        <span class="message">{{ chat }}</span>
+        <span class="timestampout">You typing...</span>
       </div>
     </div>
 
@@ -100,8 +118,8 @@
   <div class="emoji">
     <span class="material-icons send">star</span>
   </div>
-  <input>
+  <input [(ngModel)]="chat">
   <div class="emoji">
-    <span class="material-icons send">send</span>
+    <span class="material-icons send" (click)="sendMessage()">send</span>
   </div>
 </div>

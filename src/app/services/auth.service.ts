@@ -55,7 +55,7 @@ export class AuthService {
      private async updateUserData(user){
        
       const usersDb = this.afs.doc(`users/${user.uid}`);
-      const usersDbchanges = this.afs.doc(`users/${user.uid}`).valueChanges();
+      // const usersDbchanges = this.afs.doc(`users/${user.uid}`).valueChanges();
       var joinedIntext;
 
       this.afs.collection("users").doc(`${user.uid}`).ref.get()

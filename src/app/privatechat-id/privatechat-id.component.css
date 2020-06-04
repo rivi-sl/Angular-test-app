@@ -45,6 +45,15 @@
   flex-direction: column;
   padding: 5px;
   align-self: flex-end;
+  width: 100%;
+}
+
+.chats{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  align-self: flex-end;
+  width: 100%;
 }
 
 .chatin {
@@ -80,6 +89,8 @@
   font-weight: 500;
   color: white;
   display: table-row;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .timestampin {
