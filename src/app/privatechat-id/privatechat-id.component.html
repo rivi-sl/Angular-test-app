@@ -127,7 +127,7 @@
   <div class="emoji">
     <span class="material-icons send">star</span>
   </div>
-  <input [(ngModel)]="chat">
+  <input [(ngModel)]="chat" (keyup.enter)="sendMessage()">
   <div class="emoji">
     <span class="material-icons send" (click)="sendMessage()">send</span>
   </div>
