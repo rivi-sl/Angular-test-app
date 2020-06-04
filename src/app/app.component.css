@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     margin: 0px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .rk-mcol-a{
@@ -26,8 +26,10 @@
 
 .rk-navbar{
     width: 100%;
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
+    padding: 10px;
     background-color: rgba(252, 250, 250, 0.9);
+    flex-wrap: initial;
 }
 
 .rk-nav-logoholder{

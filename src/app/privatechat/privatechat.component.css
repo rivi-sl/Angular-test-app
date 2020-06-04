@@ -16,7 +16,18 @@
    width: 10px;
 }
   
-  /* Track */
+.rk-list-item{
+    display: flex;
+    flex-direction: row;
+}
+
+.rk-name{
+    flex:1;
+    align-self: center;
+    margin-left: 5px;
+}
+
+/* Track */
 .rk-users::-webkit-scrollbar-track {
    background: #f1f1f1; 
    border-radius: 10px;
@@ -48,6 +59,7 @@
 .rk-user-img{
     width: 35px;
     border-radius: 10%;
+    height: 35px;
 }
 
 .rk-selected-user{
@@ -60,3 +72,52 @@
     width: 50px;
     border-radius: 5px;
 }
+
+@media only screen and (max-width: 800px) {
+    .rk-name{
+     display: none;
+    }
+    .rk-user-img{
+        width: 100px;
+        height: 100px;
+    }
+    
+    .rk-selected-user{
+        background-color: none;
+    }
+    .rk-users li:hover{
+        background-color: #6ca0ff00;
+    }
+
+  }
+
+  .tooltiptext{
+    display: none;
+    }
+    @media only screen and (max-width: 800px) {
+    .rk-list-item {
+      position: relative;
+      display: inline-block;
+      /*border-bottom: 1px dotted black;*/
+    }
+    
+    .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      display: block;
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 999 !important;
+      top: -5px;
+      left: 105%;
+    }
+    
+    .rk-list-item:hover .tooltiptext {
+      visibility: visible;
+    }
+    }
