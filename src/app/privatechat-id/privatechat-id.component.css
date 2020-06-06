@@ -321,10 +321,29 @@ input {
   font-weight: 500;
 }
 
+.remove-img{
+  color: white;
+    font-size: 20px;
+    margin: 10px;
+  cursor: pointer;
+
+}
+
+.remove-img:hover{
+  color: rgb(62, 55, 131);
+}
+
+.chat-img{
+  max-height: 200px;
+  max-width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
 .emoji {
   border-radius: 50%;
-  background-color: white;
-  padding: 7px;
+  background-color: #007bff;
+  padding: 5px;
   margin: 2px;
   align-self: center;
   display: flex;
@@ -333,4 +352,40 @@ input {
 .emoji span {
   font-size: 170%;
   color: #393e41;
+}
+
+.upload-section{
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  align-self: center;
+  display: flex;
+}
+
+.emoji-upload {
+  border-radius: 50%;
+  background-color: white;
+  padding: 9px;
+  margin: 2px;
+  align-self: center;
+  display: flex;
+}
+
+.emoji-upload span{
+  color: #393e41;
+}
+
+.upload-image{
+  /* position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 100%;
+  height: 70px; */
+  display: none;
 }

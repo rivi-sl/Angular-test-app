@@ -2,11 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterModule, Routes, Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable, of, Timestamp } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { User } from '../services/user.model';
 import { Message } from '../services/pm.model';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../services/auth.service';
 import { switchMap } from 'rxjs/operators';
+import { FormsModule, FormControl } from '@angular/forms'
+import { AngularFireStorage } from '@angular/fire/storage';
 
 export interface Item { name: string; }
 export interface Chattype {
@@ -15,15 +18,15 @@ export interface Chattype {
   sentBy: boolean,
   sender: string,
   message: string,
-  img: boolean,
+  image: string,
 }
-export interface Chatinfo {
-  id: number,
-  lasttext: string,
-  lastdate: Date,
-  typing: boolean,
-  messages: number
-}
+// export interface Chatinfo {
+//   id: number,
+//   lasttext: string,
+//   lastdate: Date,
+//   typing: boolean,
+//   messages: number
+// }
 
 @Component({
   selector: 'app-privatechat-id',
@@ -42,7 +45,11 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
   private msgsCollection: AngularFirestoreCollection<Chattype>;
   messageitems: Observable<Chattype[]>;
 
-  constructor(private afAuth: AngularFireAuth, private route: ActivatedRoute, private afs: AngularFirestore, public auth: AuthService) {
+  imageURL = new FormControl('');
+  selectedimgURL: any = null;
+  imgSrc: string = '';
+
+  constructor(private afAuth: AngularFireAuth, private route: ActivatedRoute, private afs: AngularFirestore, public auth: AuthService, private storage: AngularFireStorage) {
     this.sub = this.route.params.subscribe(async params => {
       this.idnum = params.id;
       this.itemDoc = this.afs.doc<User>(`users/${params.id}`);
@@ -52,6 +59,25 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
     });
     
   }
+
+
+  showImg(event:any){
+    if(event.target.files && event.target.files[0]){
+      const reader = new FileReader();
+      reader.onload = (e:any) => this.imgSrc = e.target.result;
+      reader.readAsDataURL(event.target.files[0]);
+      this.selectedimgURL = event.target.files[0];
+    }else{
+      this.imgSrc = '';
+      this.selectedimgURL = null;
+    }
+  }
+
+  imgclear(){
+    this.imgSrc = '';
+    this.selectedimgURL = null;
+  }
+
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(async params => {
@@ -63,7 +89,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
   }
 
   async load(uid, rid){
-    this.msgsCollection = this.afs.collection<Chattype>(`messages/privateChats/${uid}/${rid}/messages`, ref => ref.orderBy('sent'));
+    this.msgsCollection = this.afs.collection<Chattype>(`messages/privateChats/${uid}/${rid}/messages`, ref => ref.orderBy('id'));
     this.messageitems = this.msgsCollection.valueChanges();
   }
 
@@ -71,10 +97,13 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
       this.sub = this.route.params.subscribe(async params => {
         this.idnum = params.id;
         this.itemDoc = this.afs.doc<User>(`users/${params.id}`);
-        this.friend = this.itemDoc.valueChanges();
-  
+        this.friend = this.itemDoc.valueChanges();  
         const currentUser = await this.afAuth.currentUser;
-        return this.checkmsg(currentUser.uid, this.idnum, this.chat);
+        if(this.selectedimgURL){
+          return this.sendimg(currentUser.uid, this.idnum, this.chat, this.selectedimgURL);
+        }else{
+          return this.checkmsg(currentUser.uid, this.idnum, this.chat);
+        }
       });
        
   }
@@ -118,8 +147,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
           sent: new Date(),
           sentBy: true,
           sender: uid,
-          message: chatm,
-          img: false,
+          message: chatm
         }
 
         PMessageschats.add(chatmessage)
@@ -129,8 +157,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
           sent: new Date(),
           sentBy: false,
           sender: uid,
-          message: chatm,
-          img: false,
+          message: chatm
         }
 
         PRMessageschats.add(chatRmessage)
@@ -165,8 +192,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
             sent: new Date(),
             sentBy: true,
             sender: uid,
-            message: chatm,
-            img: false,
+            message: chatm
           }
 
           PMessageschats.add(chatmessage)
@@ -176,24 +202,143 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
             sent: new Date(),
             sentBy: false,
             sender: uid,
-            message: chatm,
-            img: false,
+            message: chatm
           }
 
           PRMessageschats.add(chatRmessage)
-        }else{
-
         }
       }
       
     });
   }
 
+  sendimg(uid, rid, chatm, imgurl){
+    if(this.imageURL.valid){
+      var filePath = `${uid}/${rid}/${imgurl.name}_${new Date()}`;
+      const fileRef = this.storage.ref(filePath);
+      this.storage.upload(filePath, imgurl).snapshotChanges().pipe(
+        finalize(()=>{
+          fileRef.getDownloadURL().subscribe((url)=>{
+            const urlStorage = url;
+            this.imageURL.reset();
+            this.imgSrc = '';
+            this.selectedimgURL = null;
 
-  loadmsg(uid, rid){
-    console.log(uid)
+            this.checkmsgimg(uid, rid, chatm, urlStorage);
+          })
+        })
+      ).subscribe();     
+    }
+
   }
 
+  checkmsgimg(uid, rid, chatm, url){
+    const PMessagesinfo = this.afs.collection(`messages/privateChats/${uid}`).doc(`${rid}`);
+    const PRMessagesinfo = this.afs.collection(`messages/privateChats/${rid}`).doc(`${uid}`);
+    const PMessageschats = this.afs.collection(`messages/privateChats/${uid}/${rid}/messages`);
+    const PRMessageschats = this.afs.collection(`messages/privateChats/${rid}/${uid}/messages`);
+    this.chat = '';
+
+    this.afs.collection(`messages/privateChats/${uid}`).doc(`${rid}`).ref.get()
+    .then(async function(doc) {
+      if(doc.data()){
+        // console.log('yes')
+        const chatdetail = {
+          id: doc.data().id + 1,
+          lasttext: chatm,
+          image: true,
+          sentBy: true,
+          sender: uid,
+          lastdate: new Date(),
+          typing: false,
+          messages: doc.data().messages + 1
+        };
+        PMessagesinfo.set(chatdetail)
+
+        const chatRdetail = {
+          id: doc.data().id + 1,
+          lasttext: chatm,
+          image: true,
+          sentBy: false,
+          sender: uid,
+          lastdate: new Date(),
+          typing: false,
+          messages: doc.data().messages + 1
+        };
+        PRMessagesinfo.set(chatRdetail)
+        
+        const chatmessage = {
+          id: doc.data().messages + 1,
+          sent: new Date(),
+          image: url,
+          sentBy: true,
+          sender: uid,
+          message: chatm
+        }
+
+        PMessageschats.add(chatmessage)
+
+        const chatRmessage = {
+          id: doc.data().messages + 1,
+          sent: new Date(),
+          image: url,
+          sentBy: false,
+          sender: uid,
+          message: chatm
+        }
+
+        PRMessageschats.add(chatRmessage)
+      }else{
+        // console.log('null');
+          const chatdetail = {
+            id: 1,
+            lasttext: chatm,
+            image: true,
+            sentBy: true,
+            sender: uid,
+            lastdate: new Date(),
+            typing: false,
+            messages: 1
+          };
+          PMessagesinfo.set(chatdetail)
+
+          const chatRdetail = {
+            id: 1,
+            lasttext: chatm,
+            image: true,
+            sentBy: false,
+            sender: uid,
+            lastdate: new Date(),
+            typing: false,
+            messages: 1
+          };
+          PRMessagesinfo.set(chatRdetail)
+          
+          const chatmessage = {
+            id: 1,
+            sent: new Date(),
+            image: url,
+            sentBy: true,
+            sender: uid,
+            message: chatm
+          }
+
+          PMessageschats.add(chatmessage)
+
+          const chatRmessage = {
+            id: 1,
+            sent: new Date(),
+            image: url,
+            sentBy: false,
+            sender: uid,
+            message: chatm
+          }
+
+          PRMessageschats.add(chatRmessage)
+      }
+      
+    });
+  }
 
   // createMessage(chat: Chat){
   //   return ;

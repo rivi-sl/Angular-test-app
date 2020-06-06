@@ -100,20 +100,29 @@
       
       <div *ngFor="let messageitem of messageitems | async" class="chats"> 
           <div *ngIf="messageitem.sentBy; else elseBlock" class="chatout">
-            <span class="message">{{ messageitem.message }}</span>
+            <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
+            <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
             <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
           </div>
           <ng-template #elseBlock>
             <div class="chatin">
-              <span class="message">{{ messageitem.message }}</span>
+              <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
+            <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
               <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
             </div>
           </ng-template>
         </div>
       
-      <div class="chatout" *ngIf="chat">
+      <div class="chatout" *ngIf="chat && !imgSrc">
         <span class="message">{{ chat }}</span>
         <span class="timestampout">You typing...</span>
+      </div>
+
+      <div class="chatout" *ngIf="imgSrc && imageURL.valid">
+      <span class="material-icons remove-img" (click)="imgclear()">remove_circle</span>
+        <img [src]="imgSrc" class="chat-img" alt="">
+        <span class="message">{{ chat }}</span>
+        <span class="timestampout">Your image waiting...</span>
       </div>
     </div>
 
@@ -127,7 +136,13 @@
   <div class="emoji">
     <span class="material-icons send">star</span>
   </div>
+  <div class="emoji" (click)="fileUploader.click()">
+    <span class="material-icons send">image</span>
+  </div>
+  <input type="file" accept="image/png,image/jpg,image/jpeg,image/gif" class="upload-image" name="image" autocomplete="off" #fileUploader fromControlName="imageURL" (change)="showImg($event)" />
+
   <input [(ngModel)]="chat" (keyup.enter)="sendMessage()">
+  <!-- (change)="messageChanged()" -->
   <div class="emoji">
     <span class="material-icons send" (click)="sendMessage()">send</span>
   </div>
