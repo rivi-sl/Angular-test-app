@@ -11,7 +11,7 @@
 </div>
 </div>
 <div class="rk-chatsend">
-<div class="rk-chat-area">
+<div class="rk-chat-area" id="chat-area">
   <div class="rk-chat-box">
     <div class="rk-chat">
       <!-- <div class="chatout">
@@ -117,7 +117,7 @@
       
       <div class="chatout" *ngIf="chat && !imgSrc">
         <span class="message">{{ chat }}</span>
-        <span class="timestampout">You typing...</span>
+        <span class="timestampout">typing...</span>
       </div>
 <!-- 
       <div class="chat-star-chatout">
@@ -129,7 +129,7 @@
       <span class="material-icons remove-img" (click)="imgclear()">remove_circle</span>
         <img [src]="imgSrc" class="chat-img" alt="">
         <span class="message">{{ chat }}</span>
-        <span class="timestampout">Your image waiting...</span>
+        <span class="timestampout">Click on send to confirm...</span>
       </div>
     </div>
 
