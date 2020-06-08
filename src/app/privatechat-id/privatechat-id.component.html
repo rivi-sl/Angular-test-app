@@ -100,12 +100,14 @@
       
       <div *ngFor="let messageitem of messageitems | async" class="chats"> 
           <div *ngIf="messageitem.sentBy; else elseBlock" class="chatout">
+            <span class="material-icons chat-star" *ngIf="messageitem.star">star</span>
             <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
             <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
             <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
           </div>
           <ng-template #elseBlock>
             <div class="chatin">
+              <span class="material-icons chat-star" *ngIf="messageitem.star">star</span>
               <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
             <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
               <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
@@ -117,6 +119,11 @@
         <span class="message">{{ chat }}</span>
         <span class="timestampout">You typing...</span>
       </div>
+<!-- 
+      <div class="chat-star-chatout">
+        <span class="message"> <span class="material-icons chat-star">star</span></span>
+        <span class="timestampout timestampout-star">You typing...</span>
+      </div> -->
 
       <div class="chatout" *ngIf="imgSrc && imageURL.valid">
       <span class="material-icons remove-img" (click)="imgclear()">remove_circle</span>
@@ -133,7 +140,7 @@
   <div class="emoji">
     <span class="material-icons send">emoji_emotions</span>
   </div>
-  <div class="emoji">
+  <div class="emoji" (click)="sendStar()">
     <span class="material-icons send">star</span>
   </div>
   <div class="emoji" (click)="fileUploader.click()">

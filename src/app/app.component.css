@@ -1,3 +1,9 @@
+@font-face {
+    font-family: OpenMoji;
+    src: url('../assets/fonts/OpenMoji-Color.ttf')
+    format('ttf');
+}
+
 .rk-chat-container{
     height: 100%;
     width: 100%;

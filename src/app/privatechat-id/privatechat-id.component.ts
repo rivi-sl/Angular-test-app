@@ -108,6 +108,127 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
        
   }
 
+  sendStar(){
+    this.sub = this.route.params.subscribe(async params => {
+      this.idnum = params.id;
+      this.itemDoc = this.afs.doc<User>(`users/${params.id}`);
+      this.friend = this.itemDoc.valueChanges();  
+      const currentUser = await this.afAuth.currentUser;
+        return this.sendStartoDB(currentUser.uid, this.idnum);
+    });
+     
+  }
+
+  sendStartoDB(uid, rid){
+    const PMessagesinfo = this.afs.collection(`messages/privateChats/${uid}`).doc(`${rid}`);
+    const PRMessagesinfo = this.afs.collection(`messages/privateChats/${rid}`).doc(`${uid}`);
+    const PMessageschats = this.afs.collection(`messages/privateChats/${uid}/${rid}/messages`);
+    const PRMessageschats = this.afs.collection(`messages/privateChats/${rid}/${uid}/messages`);
+
+    this.afs.collection(`messages/privateChats/${uid}`).doc(`${rid}`).ref.get()
+    .then(async function(doc) {
+      if(doc.data()){
+        // console.log('yes')
+        const chatdetail = {
+          id: doc.data().id + 1,
+          lasttext: '',
+          image: false,
+          star: true,
+          sentBy: true,
+          sender: uid,
+          lastdate: new Date(),
+          typing: false,
+          messages: doc.data().messages + 1
+        };
+        PMessagesinfo.set(chatdetail)
+
+        const chatRdetail = {
+          id: doc.data().id + 1,
+          lasttext: '',
+          image: false,
+          star: true,
+          sentBy: false,
+          sender: uid,
+          lastdate: new Date(),
+          typing: false,
+          messages: doc.data().messages + 1
+        };
+        PRMessagesinfo.set(chatRdetail)
+        
+        const chatmessage = {
+          id: doc.data().messages + 1,
+          sent: new Date(),
+          sentBy: true,
+          sender: uid,
+          star: true,
+          message: ''
+        }
+
+        PMessageschats.add(chatmessage)
+
+        const chatRmessage = {
+          id: doc.data().messages + 1,
+          sent: new Date(),
+          sentBy: false,
+          sender: uid,
+          star: true,
+          message: ''
+        }
+
+        PRMessageschats.add(chatRmessage)
+      }else{
+        // console.log('null');
+          const chatdetail = {
+            id: 1,
+            lasttext: '',
+            image: false,
+            star: true,
+            sentBy: true,
+            sender: uid,
+            lastdate: new Date(),
+            typing: false,
+            messages: 1
+          };
+          PMessagesinfo.set(chatdetail)
+
+          const chatRdetail = {
+            id: 1,
+            lasttext: '',
+            image: false,
+            sentBy: false,
+            sender: uid,
+            lastdate: new Date(),
+            typing: false,
+            messages: 1
+          };
+          PRMessagesinfo.set(chatRdetail)
+          
+          const chatmessage = {
+            id: 1,
+            sent: new Date(),
+            sentBy: true,
+            sender: uid,
+            star: true,
+            message: ''
+          }
+
+          PMessageschats.add(chatmessage)
+
+          const chatRmessage = {
+            id: 1,
+            sent: new Date(),
+            sentBy: false,
+            sender: uid,
+            star: true,
+            message: ''
+          }
+
+          PRMessageschats.add(chatRmessage)
+        }
+      
+    });
+  }
+
   checkmsg(uid, rid, chatm){
     const PMessagesinfo = this.afs.collection(`messages/privateChats/${uid}`).doc(`${rid}`);
     const PRMessagesinfo = this.afs.collection(`messages/privateChats/${rid}`).doc(`${uid}`);
@@ -123,6 +244,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
         const chatdetail = {
           id: doc.data().id + 1,
           lasttext: chatm,
+          image: false,
           sentBy: true,
           sender: uid,
           lastdate: new Date(),
@@ -134,6 +256,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
         const chatRdetail = {
           id: doc.data().id + 1,
           lasttext: chatm,
+          image: false,
           sentBy: false,
           sender: uid,
           lastdate: new Date(),
@@ -168,6 +291,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
           const chatdetail = {
             id: 1,
             lasttext: chatm,
+            image: false,
             sentBy: true,
             sender: uid,
             lastdate: new Date(),
@@ -179,6 +303,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
           const chatRdetail = {
             id: 1,
             lasttext: chatm,
+            image: false,
             sentBy: false,
             sender: uid,
             lastdate: new Date(),

@@ -240,6 +240,28 @@
   animation-fill-mode: forwards;
 }
 
+.chat-star{
+  font-size: 4rem;
+  color: white;
+}
+
+.timestampout-star{
+  color: black;
+}
+
+.chat-star-chatout {
+  align-self: flex-end;
+  margin: 5px;
+  padding: 5px;
+  display: table;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60%;
+  border-radius: 10px 10px 0px 10px;
+  min-height: 25px;
+  height: auto;
+}
+
 @keyframes pen1 {
   from {
     margin-left: -3.1px;
@@ -342,7 +364,7 @@ input {
 
 .emoji {
   border-radius: 50%;
-  background-color: #007bff;
+  background-color: white;
   padding: 5px;
   margin: 2px;
   align-self: center;
