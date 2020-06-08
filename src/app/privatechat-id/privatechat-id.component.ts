@@ -60,6 +60,11 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
     
   }
 
+  scrolladjust(){
+    var scrollbar = document.getElementById('chat-area');
+    scrollbar.scrollTop=scrollbar.scrollHeight;
+  }
+  
 
   showImg(event:any){
     if(event.target.files && event.target.files[0]){
@@ -105,9 +110,8 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
           return this.checkmsg(currentUser.uid, this.idnum, this.chat);
         }
       });
-       
   }
-
+ 
   sendStar(){
     this.sub = this.route.params.subscribe(async params => {
       this.idnum = params.id;
