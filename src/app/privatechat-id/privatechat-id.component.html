@@ -103,14 +103,14 @@
             <span class="material-icons chat-star" *ngIf="messageitem.star">star</span>
             <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
             <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
-            <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
+            <span class="timestampout"><i class="material-icons timestamp">access_time</i>{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
           </div>
           <ng-template #elseBlock>
             <div class="chatin">
               <span class="material-icons chat-star" *ngIf="messageitem.star">star</span>
               <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
             <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
-              <span class="timestampout">{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
+              <span class="timestampout"><i class="material-icons timestamp">access_time</i>{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
             </div>
           </ng-template>
         </div>
@@ -138,17 +138,17 @@
 
 <div class="sendarea">
   <div class="emoji">
-    <span class="material-icons send">emoji_emotions</span>
+    <span class="material-icons emojipick">emoji_emotions</span>
   </div>
   <div class="emoji" (click)="sendStar()">
-    <span class="material-icons send">star</span>
+    <span class="material-icons star">star</span>
   </div>
   <div class="emoji" (click)="fileUploader.click()">
-    <span class="material-icons send">image</span>
+    <span class="material-icons imgup">image</span>
   </div>
   <input type="file" accept="image/png,image/jpg,image/jpeg,image/gif" class="upload-image" name="image" autocomplete="off" #fileUploader fromControlName="imageURL" (change)="showImg($event)" />
-
-  <input [(ngModel)]="chat" (keyup.enter)="sendMessage()">
+  
+  <input [(ngModel)]="chat" id="chatinput" (keyup.enter)="sendMessage()" placeholder="Type a message....">
   <!-- (change)="messageChanged()" -->
   <div class="emoji">
     <span class="material-icons send" (click)="sendMessage()">send</span>
