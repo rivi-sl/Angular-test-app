@@ -1,5 +1,5 @@
-<div class="rk-micons" *ngIf="auth.user$ | async as user">
-  <a *ngFor="let item of items" [class.selected]="item === selectedOption" (click)="onSelect(item)"  [routerLink]="[{ outlets: { primary: item.link, chatbox: null } }]"> 
+<div class="rk-menu-icons" *ngIf="auth.user$ | async as user">
+  <a *ngFor="let item of items" [class]="storedTheme" [class.selected]="item === selectedOption" (click)="onSelect(item)"  [routerLink]="[{ outlets: { primary: item.link, chatbox: null } }]"> 
       <span class="material-icons">
         {{ item.icon }}
       </span>

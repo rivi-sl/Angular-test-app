@@ -4,37 +4,52 @@
     format('ttf');
 }
 
-.rk-chat-container{
+.thema-surya {
+    --main-bg-color: rgba(255, 255, 255, 0.8);
+    --col-a-bg: rgba(255, 255, 255, 0.9);
+    --col-b-bg: rgba(230, 230, 230, 0.85);
+    --col-c-bg: rgba(195, 195, 195, 0.5);
+    --navbar-bg: rgba(252, 250, 250, 0.9);
+}
+
+.thema-chandra {
+    --main-bg-color: rgba(0, 0, 0, 0.8);
+    --col-a-bg: rgba(0, 0, 0, 0.9);
+    --col-b-bg: rgba(14, 14, 14, 0.85);
+    --col-c-bg: rgba(60, 60, 60, 0.5);
+    --navbar-bg: rgba(0, 0, 0, 0.9);
+}
+
+.rk-container{
     height: 100%;
     width: 100%;
     margin: 0px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--main-bg-color);
 }
 
 .rk-mcol-a{
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--col-a-bg);
     text-align: center;
     padding: 0px;
 }
 
 .rk-mcol-b{
-    background-color: rgba(230, 230, 230, 0.85);
+    background-color: var(--col-b-bg);
     font-family: 'Montserrat', sans-serif;
 }
 
 .rk-mcol-c{
     padding: 0px;
-    background-color: rgba(195, 195, 195, 0.5);
+    background-color: var(--col-c-bg);
     font-family: 'Montserrat', sans-serif;
     height: 100%;
 }
 
 .rk-navbar{
     width: 100%;
-    /* padding: 20px 30px; */
     padding: 10px;
-    background-color: rgba(252, 250, 250, 0.9);
+    background-color: var(--navbar-bg);
     flex-wrap: initial;
 }
 

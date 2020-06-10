@@ -1,17 +1,41 @@
-.rk-chat-topic{
+.thema-surya {
+    --color: rgb(255, 255, 255);
+    --font: rgb(57, 62, 65);
+    --button: rgb(195, 195, 195);
+    --btn-theme: rgb(255, 255, 255);
+}
+
+.thema-surya:hover {
+    --button: rgb(211, 211, 211);
+    --btn-theme: rgb(46, 46, 46);
+}
+
+.thema-chandra {
+    --color: rgb(0, 0, 0);
+    --font: rgb(207, 213, 218);
+    --button: rgb(41, 42, 44);
+    --btn-theme: rgb(0, 0, 0);
+}
+
+.thema-chandra:hover {
+    --button: rgb(151, 151, 151);
+    --btn-theme: rgb(226, 226, 226);
+}
+
+.rk-menu-topic{
+    color: var(--font);
     text-align: center;
     margin-top: 25px;
 }
 
-.rk-logout{
-    margin: 10px auto;
-    display: block;
-    width: 50%;
+.rk-user-section{
+    color: var(--font);
 }
 
 .rk-userimg{
     margin: 20px auto;
     width: 80px;
+    border: 5px solid var(--color);
     border-radius: 10%;
     display: block;
     width: 50%;
@@ -23,15 +47,53 @@
 
 .rk-email{
     text-align: center;
-    font-size: 80%;
+    font-size: 0.7rem;
+}
+
+.rk-logout{
+    margin: 10px auto;
+    display: block;
+    width: 50%;
+    background: var(--button);
+    color: var(--font);
+    border: 0px;
+    transition: 0.4s;
+}
+
+.rk-change-theme{
+    margin: 10px auto;
+    display: block;
+    width: 80%;
+}
+
+.rk-change-theme-img{
+    background-color: red;
+    /* width: 10px; */
+    border-radius: 8px;
+}
+
+.rk-change-theme-btn{
+    background: var(--btn-theme);
+    color: var(--font);
+    transition: 0.4s;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.rk-change-name{
+    margin: 10px auto;
+    display: block;
+    width: 50%;
+    background: var(--button);;
+    color: var(--font);
+    transition: 0.4s;
+    transition: 0.4s;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .rk-login{
     margin: 10px auto;
     display: block;
     width: 70%;
-}
-
-.rk-chatbox{
-    width: 100%;
 }

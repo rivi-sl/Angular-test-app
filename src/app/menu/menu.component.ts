@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 
 import { MenuItemsOptions } from '../menuitemsoptions';
@@ -14,6 +14,7 @@ import { AuthService } from '../services/auth.service';
 export class MenuComponent implements OnInit {
   items = MenuItems;
   selectedOption: MenuItemsOptions;
+  storedTheme: string = localStorage.getItem('rk-thema');
 
   onSelect(item: MenuItemsOptions): void {
     this.selectedOption = item;

@@ -10,6 +10,7 @@ import { AuthService } from '../services/auth.service';
 import { switchMap } from 'rxjs/operators';
 import { FormsModule, FormControl } from '@angular/forms'
 import { AngularFireStorage } from '@angular/fire/storage';
+import { ScrollingDirective } from '../scrolling.directive';
 
 export interface Item { name: string; }
 export interface Chattype {
@@ -62,9 +63,8 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
 
   scrolladjust(){
     var scrollbar = document.getElementById('chat-area');
-    scrollbar.scrollTop=scrollbar.scrollHeight;
+    scrollbar.scrollTop = scrollbar.scrollHeight;
   }
-  
 
   showImg(event:any){
     if(event.target.files && event.target.files[0]){
@@ -89,13 +89,13 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
       this.idnum = params.id;
       this.itemDoc = this.afs.doc<User>(`users/${params.id}`);
       this.friend = this.itemDoc.valueChanges();
-      // return this.load();
     });
   }
 
   async load(uid, rid){
     this.msgsCollection = this.afs.collection<Chattype>(`messages/privateChats/${uid}/${rid}/messages`, ref => ref.orderBy('id'));
     this.messageitems = this.msgsCollection.valueChanges();
+    this.scrolladjust()
   }
 
   async sendMessage(){
