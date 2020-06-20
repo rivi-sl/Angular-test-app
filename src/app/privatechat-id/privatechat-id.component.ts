@@ -10,7 +10,6 @@ import { AuthService } from '../services/auth.service';
 import { switchMap } from 'rxjs/operators';
 import { FormsModule, FormControl } from '@angular/forms'
 import { AngularFireStorage } from '@angular/fire/storage';
-import { ScrollingDirective } from '../scrolling.directive';
 
 export interface Item { name: string; }
 export interface Chattype {

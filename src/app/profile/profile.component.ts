@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -24,6 +24,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.storedTheme = localStorage.getItem('rk-thema');
+    if(this.storedTheme === ''){
+      localStorage.setItem('rk-thema', 'thema-surya');
+      this.storedTheme = localStorage.getItem('rk-thema');
+    }
   }
 
 }
