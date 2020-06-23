@@ -21,7 +21,6 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
 import { NoChatComponent } from './no-chat/no-chat.component';
 import { LoadingComponent } from './loading/loading.component';
-import { ScrollingDirective } from './scrolling.directive';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { ScrollingDirective } from './scrolling.directive';
     ChatboxComponent,
     PrivatechatIDComponent,
     NoChatComponent,
-    LoadingComponent,
-    ScrollingDirective
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
