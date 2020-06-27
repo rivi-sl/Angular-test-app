@@ -1,0 +1,19 @@
+{
+    "rivi-k" : "ரிவி-க",
+    "language" : "Tamil",
+    "langCode" : "Ta",
+    "appComponent":{
+        "info" : "விவரங்கள்"
+    },
+    "profile": {
+        "title" : "சுயவிவரம்",
+        "logout" : "வெளியேறு",
+        "changeTheme": "தீம் மாற்றவும்",
+        "changeName": "பெயர் மாற்றம்",
+        "removeAccount": "கணக்கை அகற்று"
+    }
+
+    
+    
+
+}

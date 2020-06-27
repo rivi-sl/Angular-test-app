@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 import { MenuItemsOptions } from '../menuitemsoptions';
 import { MenuItems } from '../menuitems';
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit {
     this.selectedOption = item;
   }
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.selectedOption = this.items[0];

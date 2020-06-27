@@ -1,0 +1,15 @@
+{
+    "rivi-k" : "රිවි-ක",
+    "language" : "English",
+    "langCode" : "En",
+    "appComponent":{
+        "info" : "විස්තර"
+    },
+    "profile": {
+        "title" : "ගිණුම",
+        "logout" : "ඉවත් වන්න",
+        "changeTheme": "තේමාව වෙනස් ක.",
+        "changeName": "නම වෙනස් ක.",
+        "removeAccount": "ගිණුම මකන්න"
+    }
+}

@@ -1,5 +1,5 @@
 <div class="rk-name-box">
-  <i class="material-icons profile">face</i>
+  <img class="rk-friend-img" [src]="(friend | async)?.photoURL" alt="img" >
   <div class="rk-nameplate">
   <h3 class="rk-friend-name">{{ (friend | async)?.displayName }}</h3>
   <span class="rk-status">Last online at 10.20 am</span>
