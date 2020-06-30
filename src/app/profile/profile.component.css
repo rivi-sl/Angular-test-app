@@ -1,12 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Electrolize);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
 .thema-surya {
     --color: rgb(255, 255, 255);
-    --font: rgb(57, 62, 65);
-    --button: rgb(195, 195, 195);
+    --font: rgb(255, 255, 255);
+    --button: rgba(255, 255, 255, 0);
+    --button-danger:#f44336;
     --btn-theme: rgb(255, 255, 255);
 }
 
 .thema-surya:hover {
-    --button: rgb(211, 211, 211);
+    --button: rgba(255, 255, 255, 0.178);
+    --button-danger:#f44336bd;
     --btn-theme: rgb(46, 46, 46);
 }
 
@@ -24,8 +29,11 @@
 
 .rk-menu-topic{
     color: var(--font);
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.082);
+    padding-top: 25px;
+    padding-bottom: 5px;
     text-align: center;
-    margin-top: 25px;
 }
 
 .rk-user-section{
@@ -33,40 +41,50 @@
 }
 
 .rk-userimg{
+    text-align: center;
     margin: 20px auto;
     width: 80px;
-    border: 5px solid var(--color);
-    border-radius: 10%;
+    /* border: 2px solid var(--color); */
+    border-radius: 50%;
     display: block;
     width: 50%;
-    box-shadow: #6e6e6e 2px 2px 20px 0;
+    /* box-shadow: #6e6e6e 2px 2px 10px 0; */
 }
 
 .rk-username{
+    font-size: 1.1rem;
     text-align: center;
-    text-shadow: #6e6e6e 0px 0px 18px;
+    /* text-shadow: #6e6e6e 0px 0px 18px; */
 }
 
 .rk-email{
+    font-size: 0.8rem;
     text-align: center;
-    font-size: 0.7rem;
-    text-shadow: #6e6e6e 0px 0px 18px;
+    /* text-shadow: #6e6e6e 0px 0px 18px; */
 }
 
 .rk-logout{
+    font-family: Electrolize;
+    font-size: 1.1rem;
+    font-weight: 500;
     margin: 10px auto;
     display: block;
-    width: 50%;
+    width: 95%;
     background: var(--button);
     color: var(--font);
     border: 0px;
     transition: 0.4s;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .rk-change-theme{
-    margin: 10px auto;
+    margin-top: -30px;
+    padding: 0;
     display: block;
-    width: 80%;
+    width: 100%;
 }
 
 .rk-change-theme-img{
@@ -76,28 +94,74 @@
 }
 
 .rk-change-theme-btn{
+    font-family: Electrolize;
+    font-size: 1.1rem;
+    font-weight: 500;
     margin: 10px auto;
-    background: var(--btn-theme);
+    display: block;
+    width: 95%;
+    background: var(--button);
     color: var(--font);
+    border: 0px;
     transition: 0.4s;
-    padding: 10px;
-    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .rk-change-name{
+    font-family: Electrolize;
+    font-size: 1.1rem;
+    font-weight: 500;
     margin: 10px auto;
     display: block;
-    width: 50%;
-    background: var(--button);;
+    width: 95%;
+    background: var(--button);
     color: var(--font);
+    border: 0px;
     transition: 0.4s;
-    transition: 0.4s;
-    padding: 10px;
-    border-radius: 8px;
+    text-align: left;
+       display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .rk-login{
+    font-family: Electrolize;
+    font-size: 1.1rem;
+    font-weight: 500;
     margin: 10px auto;
     display: block;
-    width: 70%;
+    width: 95%;
+    background: #f44336;
+    color: #fff;
+    border: 0px;
+    transition: 0.4s;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rk-hr{
+    border-top: 1px solid rgba(255, 255, 255, 0.452);
+    width: 90%;
+}
+
+.lastchild{
+    margin-top: 30%;
+}
+
+.material-icons{
+    margin-right: 10px;
+    /* font-size: 20px; */
+}
+
+.rk-divider{
+    background-color: rgba(255, 255, 255, 0.233);
+    width: 1px;
+    height: 25px;
+    margin-left: 5px;
+    margin-right: 10px;
 }

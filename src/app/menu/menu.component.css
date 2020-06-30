@@ -1,20 +1,20 @@
 .thema-surya {
-    --menu-icons: rgb(57, 62, 65);
+    --menu-icons: rgb(255, 255, 255);
     /* --menu-icons-bg: rgb(0, 123, 255); */
     /* --menu-icons-bl: rgba(3, 38, 102, 0.612); */
 
     --menu-icons-select: rgb(255, 255, 255);
-    --menu-icons-bg-select: rgb(0, 123, 255);
-    --menu-icons-bl-select: rgba(3, 38, 102, 0.612);
+    --menu-icons-bg-select: #00000023;
+    --menu-icons-bl-select: #222222;
 }
 
 .thema-surya:hover {
     --menu-icons: rgb(255, 255, 255);
-    --menu-icons-bg: rgb(0, 123, 255);
+    --menu-icons-bg: #00000023;
     /* --menu-icons-bl: rgba(3, 38, 102, 0.612); */
 
-    --menu-icons-select: rgb(57, 62, 65);
-    --menu-icons-bg-select: rgba(0, 123, 255, 0.8);
+    --menu-icons-select: rgb(255, 255, 255);
+    --menu-icons-bg-select: #00000023;
     /* --menu-icons-bl-select: rgba(3, 38, 102, 0.612); */
 }
 
@@ -61,8 +61,8 @@
 .rk-menu-icons a.selected{
     color: var(--menu-icons-select);
     background-color: var(--menu-icons-bg-select);
-    border-left: 7.5px solid var(--menu-icons-bl-select);
-    border-radius: 0 10px 10px 0;
+    border-left: 5px solid var(--menu-icons-bl-select);
+    /* border-radius: 0 10px 10px 0; */
 }
 
 .rk-menu-icons a:first-child{
@@ -70,8 +70,15 @@
     margin-bottom: 80px;
 }
 
+.rk-menu-icons a:last-child{
+    margin-bottom: 20px;
+    margin-top: 300%;
+}
+
+
+
 .rk-menu-icons a span{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 800px) {

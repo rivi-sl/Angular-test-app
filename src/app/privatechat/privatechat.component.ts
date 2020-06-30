@@ -14,7 +14,8 @@ export interface Item { name: string; }
 export class PrivatechatComponent implements OnInit {
 
   title = "Private Chat"
-
+  storedTheme: string;
+  change: string; 
 
   selectedUser: AddUser;
   friendAdd(user: AddUser): void {
@@ -36,6 +37,11 @@ export class PrivatechatComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.storedTheme = localStorage.getItem('rk-thema');
+    if(this.storedTheme === ''){
+      localStorage.setItem('rk-thema', 'thema-surya');
+      this.storedTheme = localStorage.getItem('rk-thema');
+    }
   }
 
 }

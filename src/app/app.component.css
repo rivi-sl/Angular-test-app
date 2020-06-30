@@ -6,10 +6,10 @@
 
 .thema-surya {
     --main-bg-color: rgba(255, 255, 255, 0.8);
-    --col-a-bg: rgba(255, 255, 255, 0.9);
-    --col-b-bg: rgba(230, 230, 230, 0.85);
+    --col-a-bg: #e3e2e2;
+    --col-b-bg: #ccc9c9;
     --col-c-bg: rgba(195, 195, 195, 0.5);
-    --navbar-bg: rgba(252, 250, 250, 0.9);
+    --navbar-bg: rgb(255, 255, 255);
 }
 
 .thema-chandra {
@@ -29,14 +29,23 @@
 
 .rk-mcol-a{
     width: 100%;
-    background-color: var(--col-a-bg);
+    /* background-color: var(--col-a-bg); */
     text-align: center;
     padding: 0px;
+    background-image: linear-gradient(to bottom, #f8561c, #ee481a, #e43a18, #d92a16, #cf1414);    width: 5%;
 }
 
 .rk-mcol-b{
-    background-color: var(--col-b-bg);
+    background-image:linear-gradient(to top, #ff7b00be, #fa6f05be, #f5670abe, #f05e0fbe, #eb5412be), url("../assets/images/loginbg.jpg");
+    background-size: auto 100%;
+    /* background-color: var(--col-b-bg); */
     font-family: 'Montserrat', sans-serif;
+    background-position: 50% 0%;
+    text-align: left;
+    padding: 0px;
+    height: 100%;
+    max-height: 100% !important;
+    border-radius: 0 10px 10px 0;
 }
 
 .rk-mcol-c{
@@ -44,6 +53,7 @@
     background-color: var(--col-c-bg);
     font-family: 'Montserrat', sans-serif;
     height: 100%;
+    width: 70%;
 }
 
 .rk-navbar{

@@ -4,22 +4,23 @@
   <img class="rk-userimg {{storedTheme}}" [src]="user.photoURL" alt="noImg">
   <h6 class="rk-username">{{ user.displayName }}</h6>
   <h6 class="rk-email">({{ user.email }})</h6>
-  <button class="rk-logout btn {{storedTheme}}" (click)="auth.signOut()">Logout</button>
+  <hr class="rk-hr">
+  <button class="rk-logout btn {{storedTheme}}" (click)="auth.signOut()"><span class="material-icons">login</span>Logout</button>
   <div class="rk-change-theme">
     <img class="rk-change-theme-img {{storedTheme}}" alt="">
-    <button class="rk-change-theme-btn btn {{storedTheme}}"  (click)="switchTheme()">Change Theme</button>
+    <button class="rk-change-theme-btn btn {{storedTheme}}"  (click)="switchTheme()"><span class="material-icons">tonality</span>Change Theme</button>
   </div>
   {{change}}
   <!-- Still Developing -> -->
   <div>
-    <button class="rk-change-name btn  {{storedTheme}}">Change Name</button>
+    <button class="rk-change-name btn  {{storedTheme}}"><span class="material-icons">face</span>Change Name</button>
   </div>
   <div>
-    <button class="rk-login btn btn-danger">Remove Account</button>
+    <button class="rk-login btn btn-danger lastchild"><span class="material-icons">remove_circle</span>Remove Account</button>
   </div>
 </div>
 <ng-template #showLogin>
   <div>
-    <button class="rk-login btn btn-secondary" (click)="auth.googleSignin()">Login with Google</button>
+    <button class="rk-login btn btn-danger" (click)="auth.googleSignin()"><i class="fa fa-google" aria-hidden="true"></i><div class="rk-divider"></div>Login with Google</button>
   </div>
 </ng-template>
