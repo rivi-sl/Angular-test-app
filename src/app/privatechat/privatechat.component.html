@@ -2,22 +2,25 @@
 
 <ul class="rk-users">
   <ng-container>
-    <li *ngFor="let user of users | async" (click)="friendAdd(user)">
+    <li *ngFor="let user of users | async" (click)="gotoFriend(user)">
      <div class="rk-list-item">
       <img class="rk-user-img" [src]="user.photoURL" alt="img" >
       <div class="rk-name">{{ user.displayName }}</div>
       <span class="tooltiptext">{{ user.displayName }}</span>
+      <span class="material-icons" (click)="friendAdd(user)">
+        add_box
+      </span>
     </div>
     </li>
     </ng-container>
 </ul>
-<div *ngIf="selectedUser">
+<!-- <div *ngIf="selectedUser">
   <hr>
   <h5>Selected Friend</h5>
   <div class="rk-selected-user">
     <img class="rk-suser-img" [src]="selectedUser.photoURL" alt="img">
     {{ selectedUser.displayName }}
   </div>
-</div>
+</div> -->
 <hr>
 <h5>Friends</h5>

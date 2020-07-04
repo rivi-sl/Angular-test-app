@@ -26,7 +26,8 @@
 
 .rk-profile{
     overflow-y: scroll;
-    height: 600px;
+    height: 600px;;
+    padding: 10px;
 }
 
 .rk-menu-topic{
