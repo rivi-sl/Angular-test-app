@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  title = "Profile"
+  title = "Profile";
+  themeIcon:any = "../assets/icons/thema-chandra.png";
   storedTheme: string;
   change: string;
 
@@ -20,13 +22,24 @@ export class ProfileComponent implements OnInit {
     this.change = "Refresh browser to see updates."
   }
 
-  constructor(public auth: AuthService) { }
+  switchLang(lang){
+    this.translate.use(lang);
+    localStorage.setItem('rk-bhasha', lang);
+  }
+
+  constructor(public auth: AuthService,  public translate: TranslateService) { 
+  }
 
   ngOnInit(): void {
     this.storedTheme = localStorage.getItem('rk-thema');
     if(this.storedTheme === ''){
       localStorage.setItem('rk-thema', 'thema-surya');
       this.storedTheme = localStorage.getItem('rk-thema');
+    }
+    if(this.storedTheme == 'thema-chandra'){
+      this.themeIcon = "../assets/icons/thema-chandra.png";
+    }else{
+      this.themeIcon = "../assets/icons/thema-surya.png";
     }
   }
 

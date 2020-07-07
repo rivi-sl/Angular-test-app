@@ -21,6 +21,13 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
 import { NoChatComponent } from './no-chat/no-chat.component';
 import { LoadingComponent } from './loading/loading.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 @NgModule({
   declarations: [
@@ -38,6 +45,14 @@ import { LoadingComponent } from './loading/loading.component';
   ],
   imports: [
     BrowserModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'rivi-k'),

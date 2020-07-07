@@ -7,6 +7,7 @@
     --button: rgba(255, 255, 255, 0);
     --button-danger:#f44336;
     --btn-theme: rgb(255, 255, 255);
+    --theme-selected: rgba(255, 255, 255, 0.831);
 }
 
 .thema-surya:hover {
@@ -20,11 +21,18 @@
     --font: rgb(207, 213, 218);
     --button: rgb(41, 42, 44);
     --btn-theme: rgb(0, 0, 0);
+    --theme-selected: rgba(44, 44, 44, 0.831);
 }
 
 .thema-chandra:hover {
     --button: rgb(151, 151, 151);
     --btn-theme: rgb(226, 226, 226);
+}
+
+.rk-profile{
+    overflow-y: scroll;
+    height: 600px;;
+    padding: 10px;
 }
 
 .rk-menu-topic{
@@ -81,16 +89,30 @@
 }
 
 .rk-change-theme{
-    margin-top: -30px;
+/*     margin-top: -30px;
     padding: 0;
+    display: block;
+    width: 100%; */
+    margin: 50px auto 10px;
     display: block;
     width: 100%;
 }
 
+.rk-change-theme-select{
+    background-color: var(--theme-selected);
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .rk-change-theme-img{
-    background-color: red;
-    /* width: 10px; */
+    width: 100px;
     border-radius: 8px;
+}
+
+.rk-change-theme-text{
+    font-size: 0.8rem;
+    margin-left: 10px;
+    display: inline-block;
 }
 
 .rk-change-theme-btn{
@@ -104,11 +126,46 @@
     color: var(--font);
     border: 0px;
     transition: 0.4s;
-    text-align: left;
+/*     text-align: left;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; */
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
 }
+
+.rk-change-language{
+    margin: 10px auto 10px;
+    display: block;
+    width: 100%;
+}
+
+.rk-change-lang-btns{
+    display: block;
+    width: 100%;
+}
+
+.rk-change-lang-btn{
+    margin: 10px auto;
+    background: var(--btn-theme);
+    color: var(--font);
+    transition: 0.4s;
+    padding: 10px;
+}
+
+.rk-change-lang-btn:nth-child(1){
+    border-radius: 8px 0 0 8px;
+}
+
+.rk-change-lang-btn:nth-child(2){
+    border-radius: 0;
+}
+
+.rk-change-lang-btn:nth-child(3){
+    border-radius: 0 8px 8px 0;
+}
+
 
 .rk-change-name{
     font-family: Electrolize;

@@ -1,19 +1,22 @@
 <div class="rk-container {{storedTheme}} row">
-  <div class="rk-mcol-a {{storedTheme}}">
+
+  <div class="rk-mcol-a {{storedTheme}} {{storedLang}} col-1">
     <app-menu></app-menu>
   </div>
-  <div class="rk-mcol-b {{storedTheme}} col-3">
+  <div class="rk-mcol-b {{storedTheme}} {{storedLang}} col-3">
     <router-outlet></router-outlet>
   </div>
-  <div class="rk-mcol-c {{storedTheme}}">
+
+  <div class="rk-mcol-c {{storedTheme}} {{storedLang}} col-8">
     <nav class="rk-navbar navbar navbar-expand-lg {{storedTheme}} navbar-light">
-      <a class="navbar-brand" href="#">rivi - k 😁</a>
+      <a class="navbar-brand" href="#">{{ 'rivi-k' | translate }}</a>
+    <img class="rk-change-theme-img {{storedTheme}}" alt="">
+
       <div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">info</a>
+            <a class="nav-link" href="#">{{ 'appComponent.info' | translate }}</a>
           </li>
-          <button class="rk-login btn btn-secondary" (click)="switchTheme()">Change Theme</button>
         </ul>
       </div>
       <div class="rk-nav-logoholder">

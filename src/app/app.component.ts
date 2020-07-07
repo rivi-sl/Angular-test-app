@@ -4,6 +4,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +13,22 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   storedTheme: string = localStorage.getItem('rk-thema');
+  public storedLang: string;
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router, public translate: TranslateService) {
+    const browserLang = localStorage.getItem('rk-bhasha');
 
-  switchTheme(){
-    if(this.storedTheme === 'thema-chandra'){
-      localStorage.setItem('rk-thema', 'thema-surya');
+    if(browserLang=="si"){
+      translate.use('si');
+      this.storedLang = 'si';
+    }else if(browserLang=="ta"){
+      translate.use('ta');
+      this.storedLang = 'ta';
     }else{
-      localStorage.setItem('rk-thema', 'thema-chandra');
+      translate.use('en');
+      this.storedLang = 'en';
     }
-    this.storedTheme = localStorage.getItem('rk-thema');
+    
   }
 
   ngOnInit(): void {

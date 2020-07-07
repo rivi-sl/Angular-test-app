@@ -1,0 +1,19 @@
+{
+    "rivi-k" : "RIVI-K",
+    "language" : "English",
+    "langCode" : "En",
+    "appComponent":{
+        "info" : "Info"
+    },
+    "profile": {
+        "title" : "Account",
+        "logout" : "Logout",
+        "changeTheme": "Change Theme",
+        "changeName": "Change Name",
+        "removeAccount": "Delete Account"
+    }
+
+    
+    
+
+}

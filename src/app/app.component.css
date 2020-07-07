@@ -20,6 +20,18 @@
     --navbar-bg: rgba(0, 0, 0, 0.9);
 }
 
+.si{
+    font-family: 'Abhaya Libre', serif;
+}
+
+.en{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ta{
+    font-family: 'Mukta Malar', sans-serif;
+}
+
 .rk-container{
     height: 100%;
     width: 100%;
@@ -38,7 +50,6 @@
 .rk-mcol-b{
     background-image:linear-gradient(to top, #ff7b00be, #fa6f05be, #f5670abe, #f05e0fbe, #eb5412be), url("../assets/images/loginbg.jpg");
     background-size: auto 100%;
-    /* background-color: var(--col-b-bg); */
     font-family: 'Montserrat', sans-serif;
     background-position: 50% 0%;
     text-align: left;
@@ -46,12 +57,12 @@
     height: 100%;
     max-height: 100% !important;
     border-radius: 0 10px 10px 0;
+    background-color: var(--col-b-bg);
 }
 
 .rk-mcol-c{
     padding: 0px;
     background-color: var(--col-c-bg);
-    font-family: 'Montserrat', sans-serif;
     height: 100%;
     width: 70%;
 }
