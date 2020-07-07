@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-// import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -22,14 +22,13 @@ export class ProfileComponent implements OnInit {
     this.change = "Refresh browser to see updates."
   }
 
-  // switchLang(lang){
-  //   this.translate.use(lang);
-  //   localStorage.setItem('rk-bhasha', lang);
-  // }
-
-  constructor(public auth: AuthService) { 
+  switchLang(lang){
+    this.translate.use(lang);
+    localStorage.setItem('rk-bhasha', lang);
   }
-  // ,  public translate: TranslateService
+
+  constructor(public auth: AuthService,  public translate: TranslateService) { 
+  }
 
   ngOnInit(): void {
     this.storedTheme = localStorage.getItem('rk-thema');

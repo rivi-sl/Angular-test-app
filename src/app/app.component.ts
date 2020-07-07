@@ -17,10 +17,18 @@ export class AppComponent implements OnInit{
 
   constructor(private router: Router, public translate: TranslateService) {
     const browserLang = localStorage.getItem('rk-bhasha');
-    translate.use(browserLang.match(/en|si|ta/) ? browserLang : 'en');    
-    this.storedLang = browserLang.match(/en|si|ta/) ? browserLang : 'en';
 
-      
+    if(browserLang=="si"){
+      translate.use('si');
+      this.storedLang = 'si';
+    }else if(browserLang=="ta"){
+      translate.use('ta');
+      this.storedLang = 'ta';
+    }else{
+      translate.use('en');
+      this.storedLang = 'en';
+    }
+    
   }
 
   ngOnInit(): void {
