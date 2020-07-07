@@ -1,5 +1,13 @@
 <h2 class="rk-chat-topic">{{ title | uppercase }}</h2>
-
+<div class="rk-privatechat">
+<div *ngIf="selectedUser" class="rk-selecteduser">
+  <!-- <h5 class="rk-selecttitle">Selected Friend</h5> -->
+  <div class="rk-selected-user">
+    <img class="rk-suser-img" [src]="selectedUser.photoURL" alt="img">
+    {{ selectedUser.displayName }}
+  </div>
+  <hr class="rk-hr">
+</div>
 <ul class="rk-users">
   <ng-container>
     <li *ngFor="let user of users | async" (click)="gotoFriend(user)">
@@ -13,7 +21,8 @@
     </div>
     </li>
     </ng-container>
-</ul>
+  </ul>
+</div>
 <!-- <div *ngIf="selectedUser">
   <hr>
   <h5>Selected Friend</h5>
@@ -22,5 +31,6 @@
     {{ selectedUser.displayName }}
   </div>
 </div> -->
-<hr>
-<h5>Friends</h5>
+<!-- <hr>
+<h5>Friends</h5> -->
+

@@ -17,6 +17,7 @@ export class PrivatechatComponent implements OnInit {
 
   title = "Private Chat";
   storedTheme: string;
+//   change: string; 
 
   constructor(private afs: AngularFirestore, private router:Router, private afAuth: AngularFireAuth, public auth: AuthService,) {
     this.itemsCollection = afs.collection<Item>('users');

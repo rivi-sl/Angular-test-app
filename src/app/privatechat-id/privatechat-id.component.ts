@@ -65,6 +65,15 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
     scrollbar.scrollTop = scrollbar.scrollHeight;
   }
 
+  heightcheck(){
+    var scrollbar = document.getElementById('chat-area');
+    if (scrollbar.scrollTop < scrollbar.scrollHeight){
+      var scrollbtn = document.getElementById('myBtn');
+      scrollbtn.style.display="block";
+    }
+    var t = setTimeout(this.heightcheck, 500);
+  }
+
   showImg(event:any){
     if(event.target.files && event.target.files[0]){
       const reader = new FileReader();
@@ -91,10 +100,13 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
     });
   }
 
+  ngAfterViewChecked(){
+    this.scrolladjust();
+  }
+
   async load(uid, rid){
     this.msgsCollection = this.afs.collection<Chattype>(`messages/privateChats/${uid}/${rid}/messages`, ref => ref.orderBy('id'));
     this.messageitems = this.msgsCollection.valueChanges();
-    this.scrolladjust()
   }
 
   async sendMessage(){
