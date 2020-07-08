@@ -36,6 +36,8 @@
     height: 100%;
     width: 100%;
     margin: 0px;
+    display: flex;
+    flex-direction: row;
     background-color: var(--main-bg-color);
 }
 
@@ -55,6 +57,7 @@
     text-align: left;
     padding: 0px;
     height: 100%;
+    width: 50%;
     max-height: 100% !important;
     border-radius: 0 10px 10px 0;
     background-color: var(--col-b-bg);

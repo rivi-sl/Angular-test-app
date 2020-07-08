@@ -19,7 +19,8 @@ export class ProfileComponent implements OnInit {
     }else{
       localStorage.setItem('rk-thema', 'thema-chandra');
     }
-    this.change = "Refresh browser to see updates."
+    // this.change = "Refresh browser to see updates."
+    alert('Refresh browser to see updates.');
   }
 
   switchLang(lang){
