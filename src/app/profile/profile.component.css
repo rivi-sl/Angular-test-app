@@ -5,6 +5,7 @@
     --color: rgb(255, 255, 255);
     --font: rgb(255, 255, 255);
     --button: rgba(255, 255, 255, 0);
+    --button-lang: rgba(255, 255, 255, 0.178);
     --button-danger:#f44336;
     --btn-theme: rgb(255, 255, 255);
     --theme-selected: rgba(255, 255, 255, 0.831);
@@ -12,6 +13,7 @@
 
 .thema-surya:hover {
     --button: rgba(255, 255, 255, 0.178);
+    --button-lang: rgba(255, 255, 255, 0.356);
     --button-danger:#f44336bd;
     --btn-theme: rgb(46, 46, 46);
 }
@@ -30,9 +32,9 @@
 }
 
 .rk-profile{
-    overflow-y: scroll;
-    height: 600px;;
-    padding: 10px;
+    /* overflow-y: scroll; */
+    height: 100%;
+    width: 100%;
 }
 
 .rk-menu-topic{
@@ -46,6 +48,7 @@
 
 .rk-user-section{
     color: var(--font);
+    width: 100%;
 }
 
 .rk-userimg{
@@ -93,9 +96,10 @@
     padding: 0;
     display: block;
     width: 100%; */
-    margin: 50px auto 10px;
+    margin: 0 auto 10px;
     display: block;
-    width: 100%;
+    width: 95%;
+   
 }
 
 .rk-change-theme-select{
@@ -119,17 +123,16 @@
     font-family: Electrolize;
     font-size: 1.1rem;
     font-weight: 500;
-    margin: 10px auto;
     display: block;
     width: 95%;
     background: var(--button);
     color: var(--font);
     border: 0px;
     transition: 0.4s;
-/*     text-align: left;
+    text-align: left;
     display: flex;
     flex-direction: row;
-    align-items: center; */
+    align-items: center;
     padding: 10px;
     width: 100%;
     border-radius: 8px;
@@ -137,18 +140,19 @@
 
 .rk-change-language{
     margin: 10px auto 10px;
+    width: 95%;
     display: block;
-    width: 100%;
 }
 
 .rk-change-lang-btns{
     display: block;
     width: 100%;
+    background: var(--button-lang);
 }
 
 .rk-change-lang-btn{
     margin: 10px auto;
-    background: var(--btn-theme);
+    background: var(--button-lang);
     color: var(--font);
     transition: 0.4s;
     padding: 10px;
@@ -207,7 +211,7 @@
 }
 
 .lastchild{
-    margin-top: 30%;
+    /* margin-top: 30%; */
 }
 
 .material-icons{
