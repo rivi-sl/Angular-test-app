@@ -7,6 +7,7 @@
     --button: rgba(255, 255, 255, 0);
     --button-danger:#f44336;
     --btn-theme: rgb(255, 255, 255);
+    --scroll-track:rgb(253, 122, 0);;
 }
 
 .thema-surya:hover {
@@ -20,6 +21,7 @@
     --font: rgb(207, 213, 218);
     --button: rgb(41, 42, 44);
     --btn-theme: rgb(0, 0, 0);
+    --scroll-track:rgb(158, 157, 157) ;
 }
 
 .thema-chandra:hover {
@@ -75,11 +77,12 @@
     flex:1;
     align-self: center;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 /* Track */
 .rk-users::-webkit-scrollbar-track {
-   background: rgb(253, 122, 0); 
+   background: var(--scroll-track);
 }
    
   /* Handle */
@@ -109,10 +112,15 @@
     width: 35px;
     border-radius: 10%;
     height: 35px;
+    cursor: pointer;
 }
 
 .rk-selecttitle{
     color: white;
+}
+
+.material-icons{
+    cursor: pointer;
 }
 
 .rk-selected-user{
