@@ -24,17 +24,17 @@
     /* --menu-icons-bl: rgba(3, 38, 102, 0.612); */
 
     --menu-icons-select: rgb(255, 255, 255);
-    --menu-icons-bg-select: rgb(0, 123, 255);
-    --menu-icons-bl-select: rgba(3, 38, 102, 0.612);
+    --menu-icons-bg-select: #00000023;
+    --menu-icons-bl-select: #222222;
 }
 
 .thema-chandra:hover {
     --menu-icons: rgb(255, 255, 255);
-    --menu-icons-bg: rgb(0, 123, 255);
+    --menu-icons-bg: rgb(194, 73, 8);
     /* --menu-icons-bl: rgba(3, 38, 102, 0.612); */
 
     --menu-icons-select: rgb(187, 192, 195);
-    --menu-icons-bg-select: rgba(0, 123, 255, 0.8);
+    --menu-icons-bg-select: rgba(194, 73, 8, 0.8);
     /* --menu-icons-bl-select: rgba(3, 38, 102, 0.612); */
 }
 
