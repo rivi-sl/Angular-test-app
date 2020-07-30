@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PrivatechatIDComponent } from './privatechat-id/privatechat-id.component';
 
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AppearenceComponent } from './settings/appearence/appearence.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
     component: PrivatechatIDComponent,
     outlet: 'chatbox',
   },
+  {path:'settings/appearance',
+  component:AppearenceComponent,
+   outlet:'chatbox',
+   },
   { path: 'settings', component: SettingsComponent, canActivate: [AngularFireAuthGuard] },
 ];
 

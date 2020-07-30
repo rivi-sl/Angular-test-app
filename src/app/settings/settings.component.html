@@ -1,1 +1,7 @@
 <h2 class="rk-chat-topic">{{ title | uppercase }}</h2>
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a [routerLink]="[{ outlets: { chatbox: ['/settings/appearance'] } }]">Appearance</a>
+    </li>
+</ul>
+

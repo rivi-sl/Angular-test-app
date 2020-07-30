@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
   title = "Settings"
-
+  
   constructor() { }
 
   ngOnInit(): void {
