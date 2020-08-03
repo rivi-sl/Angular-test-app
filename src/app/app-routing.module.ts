@@ -25,7 +25,7 @@ const routes: Routes = [
     component: PrivatechatIDComponent,
     outlet: 'chatbox',
   },
-  {path:'settings/appearance',
+  {path:'appearance',
   component:AppearenceComponent,
    outlet:'chatbox',
    },

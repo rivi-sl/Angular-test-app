@@ -8,10 +8,24 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class SettingsComponent implements OnInit {
   title = "Settings"
+  storedTheme:string;
   
-  constructor() { }
+  constructor(private router:Router) { }
+
+  navigate(){
+    this.router.navigate([
+      {
+        outlets: { chatbox: ['appearance' ] },
+      },
+    ]);
+  }
 
   ngOnInit(): void {
-  }
+    this.storedTheme = localStorage.getItem('rk-thema');
+    if(this.storedTheme === ''){
+      localStorage.setItem('rk-thema', 'thema-surya');
+      this.storedTheme = localStorage.getItem('rk-thema');
+    }
+ }
 
 }
