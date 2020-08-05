@@ -1,1 +1,6 @@
-<h2 class="rk-chat-topic">{{ title | uppercase }}</h2>
+<div>
+<h2 class="rk-settings-topic {{storedTheme}}">{{ 'settings.title'| translate | uppercase }}</h2>
+  <div>
+      <button class="rk-settings-btn btn {{storedTheme}}" (click)='navigate()'><span class="material-icons">color_lens</span>{{ 'settings.appearance' | translate }}</button>
+  </div>
+</div>
