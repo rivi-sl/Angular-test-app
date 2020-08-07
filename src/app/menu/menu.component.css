@@ -82,14 +82,5 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .rk-menu-icons a span{
-        font-size: 6vw;
-    }
-    .rk-menu-icons a{
-        border-left: 4px solid var(--menu-icons-bl);
-     }
 
-     .rk-menu-icons a.selected{
-        border-left: 4px solid var(--menu-icons-bl-select);
-    }
   }

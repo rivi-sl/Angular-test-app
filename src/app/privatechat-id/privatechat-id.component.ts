@@ -36,7 +36,7 @@ export interface Chattype {
 export class PrivatechatIDComponent implements OnInit, OnDestroy {
 
   chat = '';
-
+  scrolledstate= true;
   idnum: number;
   private sub: any;
   private itemDoc: AngularFirestoreDocument<User>;
@@ -91,7 +91,6 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
     this.selectedimgURL = null;
   }
 
-
   ngOnInit() {
     this.sub = this.route.params.subscribe(async params => {
       this.idnum = params.id;
@@ -102,7 +101,7 @@ export class PrivatechatIDComponent implements OnInit, OnDestroy {
 
   ngAfterViewChecked(){
     this.scrolladjust();
-  }
+}
 
   async load(uid, rid){
     this.msgsCollection = this.afs.collection<Chattype>(`messages/privateChats/${uid}/${rid}/messages`, ref => ref.orderBy('id'));
