@@ -11,6 +11,16 @@
         "changeTheme": "தீம் மாற்றவும்",
         "changeName": "பெயர் மாற்றம்",
         "removeAccount": "கணக்கை அகற்று"
+    },
+    "settings": {
+        "title" : "அமைப்புகள்",
+        "appearance" : "தோற்றம்"
+    },
+    "appearance":{
+        "theme" :"தீம்",
+        "theme-chandra":"சந்திரா",
+        "theme-surya":"சூர்யா",
+        "language":"மொழி"
     }
 
     

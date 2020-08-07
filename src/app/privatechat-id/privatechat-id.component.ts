@@ -34,6 +34,7 @@ export interface Chattype {
   styleUrls: ['./privatechat-id.component.css']
 })
 export class PrivatechatIDComponent implements OnInit, OnDestroy {
+  storedTheme: string = localStorage.getItem('rk-thema');
 
   chat = '';
   scrolledstate= true;

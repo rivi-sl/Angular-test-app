@@ -11,5 +11,15 @@
         "changeTheme": "තේමාව වෙනස් ක.",
         "changeName": "නම වෙනස් ක.",
         "removeAccount": "ගිණුම මකන්න"
+    },
+    "settings": {
+        "title" : "සැකසුම්",
+        "appearance" : "පෙනුම"
+    },
+    "appearance":{
+        "theme" :"තේමාව",
+        "theme-chandra":"චන්ද්‍ර",
+        "theme-surya":"සූර්ය",
+        "language":"භාෂාව"
     }
 }

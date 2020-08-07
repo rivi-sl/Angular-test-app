@@ -11,6 +11,16 @@
         "changeTheme": "Change Theme",
         "changeName": "Change Name",
         "removeAccount": "Delete Account"
+    },
+    "settings": {
+        "title" : "Settings",
+        "appearance" : "Appearance"
+    },
+    "appearance":{
+        "theme" :"Theme",
+        "theme-chandra":"Chandra",
+        "theme-surya":"Surya",
+        "language":"Language"
     }
 
     

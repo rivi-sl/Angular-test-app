@@ -1,5 +1,5 @@
 <div class="rk-profile">
-<h2 class="rk-menu-topic {{storedTheme}}">{{ 'profile.title' | translate }}</h2>
+<h2 class="rk-menu-topic {{storedTheme}}">{{ 'profile.title' | translate| uppercase }}</h2>
 
 <div *ngIf="auth.user$ | async as user ; else showLogin" class="rk-user-section {{storedTheme}}">
   <img class="rk-userimg {{storedTheme}}" [src]="user.photoURL" alt="noImg">
@@ -7,25 +7,25 @@
   <h6 class="rk-email">({{ user.email }})</h6>
   <hr class="rk-hr">
   <button class="rk-logout btn {{storedTheme}}" (click)="auth.signOut()"><span class="material-icons">login</span>{{ 'profile.logout' | translate }}</button>
-  <div class="rk-change-theme">
-    <!-- <img class="rk-change-theme-img {{storedTheme}}" alt=""> -->
+  <!--<div class="rk-change-theme">
+    <img class="rk-change-theme-img {{storedTheme}}" alt=""> 
     <button class="rk-change-theme-btn btn {{storedTheme}}"  (click)="switchTheme()"><span class="material-icons">tonality</span>{{ 'profile.changeTheme' | translate }}</button>
 
-<!--   <button class="rk-logout btn {{storedTheme}}" (click)="auth.signOut()">{{ 'profile.logout' | translate }}</button>
+  <button class="rk-logout btn {{storedTheme}}" (click)="auth.signOut()">{{ 'profile.logout' | translate }}</button>
   <div class="rk-change-theme">
     <div class="rk-change-theme-select">
     <img class="rk-change-theme-img {{storedTheme}}" alt="A generic" [src]="themeIcon">
     <div class="rk-change-theme-text">Lunar Theme is Selected</div>
     </div>
-    <button class="rk-change-theme-btn btn {{storedTheme}}"  (click)="switchTheme()">{{ 'profile.changeTheme' | translate }}</button> -->
+    <button class="rk-change-theme-btn btn {{storedTheme}}"  (click)="switchTheme()">{{ 'profile.changeTheme' | translate }}</button> 
 
-  </div>
+  </div>-->
   
-  <div class="rk-change-language">
+ <!-- <div class="rk-change-language">
   <button class="rk-change-lang-btn btn col-4 {{storedTheme}}"  (click)="switchLang('si')">Sinhala</button>
   <button class="rk-change-lang-btn btn col-4 {{storedTheme}}"  (click)="switchLang('en')">English</button>
   <button class="rk-change-lang-btn btn col-4 {{storedTheme}}"  (click)="switchLang('ta')">Tamil</button>
-  </div>
+  </div>-->
 
   {{change}}
   <!-- Still Developing -> -->

@@ -91,11 +91,11 @@
     align-items: center;
 }
 
-.rk-change-theme{
-/*     margin-top: -30px;
+/*.rk-change-theme{
+    margin-top: -30px;
     padding: 0;
     display: block;
-    width: 100%; */
+    width: 100%; 
     margin: 0 auto 10px;
     display: block;
     width: 95%;
@@ -136,9 +136,9 @@
     padding: 10px;
     width: 100%;
     border-radius: 8px;
-}
+}*/
 
-.rk-change-language{
+/*.rk-change-language{
     margin: 10px auto 10px;
     width: 95%;
     display: block;
@@ -168,7 +168,7 @@
 
 .rk-change-lang-btn:nth-child(3){
     border-radius: 0 8px 8px 0;
-}
+}*/
 
 
 .rk-change-name{

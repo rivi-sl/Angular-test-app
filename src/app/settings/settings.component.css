@@ -1,4 +1,61 @@
-.rk-chat-topic{
+@import url(https://fonts.googleapis.com/css?family=Electrolize);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.thema-surya {
+    --color: rgb(255, 255, 255);
+    --font: rgb(255, 255, 255);
+    --button: rgba(255, 255, 255, 0);
+    --button-lang: rgba(255, 255, 255, 0.178);
+    --button-danger:#f44336;
+    --btn-theme: rgb(255, 255, 255);
+    --theme-selected: rgba(255, 255, 255, 0.831);
+}
+
+.thema-surya:hover {
+    --button: rgba(255, 255, 255, 0.178);
+    --button-lang: rgba(255, 255, 255, 0.356);
+    --button-danger:#f44336bd;
+    --btn-theme: rgb(46, 46, 46);
+}
+
+.thema-chandra {
+    --color: rgb(0, 0, 0);
+    --font: rgb(207, 213, 218);
+    --button: rgb(41, 42, 44);
+    --btn-theme: rgb(0, 0, 0);
+    --theme-selected: rgba(44, 44, 44, 0.831);
+}
+
+.thema-chandra:hover {
+    --button: rgb(151, 151, 151);
+    --btn-theme: rgb(226, 226, 226);
+}
+
+
+.rk-settings-topic{
+    color: var(--font);
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.082);
+    padding-top: 25px;
+    padding-bottom: 5px;
     text-align: center;
-    margin-top: 25px;
+}
+
+.rk-settings-btn{
+    cursor: pointer;
+    font-family: Electrolize;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 10px auto;
+    display: block;
+    width: 95%;
+    background: var(--button);
+    color: var(--font);
+    border: 0px;
+    transition: 0.4s;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
 }

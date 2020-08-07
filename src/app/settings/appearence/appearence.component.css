@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Electrolize);
+
+.thema-surya {
+    --color: rgb(255, 255, 255);
+    --font: rgb(255, 255, 255);
+    --itemtitle: rgb(29, 29, 29);
+    --themecard:rgba(250, 250, 250, 0.966);
+    --themetitle:rgb(29, 29, 29);
+    --button-lang: rgba(255, 255, 255, 0.178);
+    --button-danger:#f44336;
+    --btn-theme: rgb(255, 255, 255);
+    --theme-selected: rgba(255, 255, 255, 0.831);
+}
+
+.thema-chandra {
+    --color: rgb(0, 0, 0);
+    --font: rgb(207, 213, 218);
+    --itemtitle: rgb(204, 204, 204);
+    --themecard:rgba(141, 141, 141, 0.692);
+    --themetitle:rgb(247, 247, 247);
+    --btn-theme: rgb(0, 0, 0);
+    --theme-selected: rgba(44, 44, 44, 0.831);
+}
+
+.rk-settings-appearance{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+.appearance-content{
+    font-family: Electrolize;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 10px auto;
+   /* color: var(--itemtitle);*/
+   color: var(--itemtitle);
+}
+.rk-theme-card{
+    background-color: var(--themecard);
+    box-shadow: inset 0px -15px 3px -7px rgb(196, 0, 0);
+    margin-bottom: 30px;
+}
+.theme-card-text{
+   
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 5px;
+}
+.theme-card-text h5{
+    font-family:Electrolize;
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: var(--themetitle);
+}
+.rk-change-lang-btn:nth-child(1){
+    border-radius: 8px 0 0 8px;
+    
+}
+
+.rk-change-lang-btn:nth-child(2){
+    border-radius: 0;
+    
+}
+
+.rk-change-lang-btn:nth-child(3){
+    border-radius: 0 8px 8px 0;
+    
+}
+.rk-change-lang-btn{
+    font-family:Electrolize;
+    font-size: 1.3rem;
+    font-weight: 550;
+    transition: 0.4s;
+
+}
+
+
+

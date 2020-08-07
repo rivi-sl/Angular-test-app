@@ -1,0 +1,39 @@
+<div class="rk-settings-appearance">
+   <div class="container">
+      <h2 class="appearance-content {{storedTheme}}">{{ 'appearance.theme'| translate}}</h2>
+      <div class="row">
+
+         <div class="col-md-6" (click)="switchThemechandra()">
+         <div class="card rk-theme-card border border-dark rounded {{storedTheme}}" [@theme-selector]="Selected ? 'selected' : 'notselected'">
+            <img class="card-img-top" src="../assets/images/settings/theme-chandra.png" alt="Card image cap" width="286" height="180">
+            <div class="card-body theme-card-text">
+               <h5 class="card-title {{storedTheme}}">{{ 'appearance.theme-chandra'| translate}}</h5>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-md-6" (click)="switchThemesurya()" >
+            <div class="card rk-theme-card border border-secondary rounded {{storedTheme}}" [@theme-selector]="Selected ? 'notselected' : 'selected'">
+               <img class="card-img-top" src="../assets/images/settings/theme-suurya.png" alt="Card image cap" width="286" height="180">
+               <div class="card-body theme-card-text">
+                  <h5 class="card-title {{storedTheme}}">{{ 'appearance.theme-surya'| translate}}</h5>
+               </div>
+             </div>
+             </div>
+
+      </div>
+
+      <div class="container">
+         <h2 class="appearance-content {{storedTheme}}">{{ 'appearance.language'| translate}}</h2>
+         <div class="row">
+            <div class="rk-change-language col-md-6">
+               <button class="rk-change-lang-btn btn btn-danger col-4 {{storedTheme}}"  (click)="switchLang('si')" [@lang-selector]="changed ? 'selected' : 'notselected'">Sinhala</button>
+               <button class="rk-change-lang-btn btn btn-danger col-4 {{storedTheme}}"  (click)="switchLang('en')" [@lang-selector]="changed ? 'selected' : 'notselected'">English</button>
+               <button class="rk-change-lang-btn btn btn-danger col-4 {{storedTheme}}"  (click)="switchLang('ta')" [@lang-selector]="changed ? 'selected' : 'notselected'">Tamil</button>
+               </div>
+             
+         </div>
+      </div>
+
+   </div>
+</div>

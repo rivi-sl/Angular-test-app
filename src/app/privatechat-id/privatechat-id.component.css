@@ -1,7 +1,37 @@
+.thema-surya {
+  --box-color:rgb(255, 140, 0);
+}
+
+/* .thema-surya:hover {
+  --menu-icons: rgb(255, 255, 255);
+  --menu-icons-bg: #00000023;
+  /* --menu-icons-bl: rgba(3, 38, 102, 0.612); 
+
+  --menu-icons-select: rgb(255, 255, 255);
+  --menu-icons-bg-select: #00000023;
+  /* --menu-icons-bl-select: rgba(3, 38, 102, 0.612); 
+} */
+
+.thema-chandra {
+  --box-color:rgba(155, 155, 155, 0.774) ;
+}
+
+/*.thema-chandra:hover {
+  --menu-icons: rgb(255, 255, 255);
+  --menu-icons-bg: rgb(194, 73, 8);
+  /* --menu-icons-bl: rgba(3, 38, 102, 0.612); 
+
+  --menu-icons-select: rgb(187, 192, 195);
+  --menu-icons-bg-select: rgba(194, 73, 8, 0.8)
+  /* --menu-icons-bl-select: rgba(3, 38, 102, 0.612); 
+}*/
+
 .rk-name-box {
   width: 100%;
-  background: #EAF0F1;
-  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  background:var(--box-color);
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2), 5px 10px 20px 0 rgba(0, 0, 0, 0.19);
+  /* padding: 20px 50px; */
+  transition: 1s;
   height: 12%;
   display: flex;
   flex-direction: row;
@@ -16,7 +46,6 @@
   width: 35px;
   border-radius: 10%;
   height: 35px;
-  margin-right: 10px;
   margin-left: 10px;
 }
 
@@ -35,6 +64,7 @@
   font-family: 'Montserrat';
   font-size: 12px;
   margin: 0;
+  margin-left: 5px;
 }
 
 .rk-chat-area {
@@ -45,12 +75,16 @@
   padding: 0;
   margin: 0 auto;
 }
+.material-icons{
+  cursor: pointer;
+}
 
 
 .rk-friend-name{
   font-family: 'Montserrat';
   font-size: 20px;
   margin: 0;
+  margin-left: 5px;
 }
 
 .rk-chat-area::-webkit-scrollbar {
@@ -120,7 +154,7 @@
   align-self: flex-end;
   margin: 5px;
   padding: 5px;
-  background-color: rgb(236, 140, 13);
+  background-color: #cd441a;
   display: table;
   flex-direction: column;
   align-items: center;
