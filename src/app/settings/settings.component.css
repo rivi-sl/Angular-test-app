@@ -21,13 +21,13 @@
 .thema-chandra {
     --color: rgb(0, 0, 0);
     --font: rgb(207, 213, 218);
-    --button: rgb(41, 42, 44);
+    --button: rgba(41, 42, 44, 0);
     --btn-theme: rgb(0, 0, 0);
     --theme-selected: rgba(44, 44, 44, 0.831);
 }
 
 .thema-chandra:hover {
-    --button: rgb(151, 151, 151);
+    --button: #121212cc;
     --btn-theme: rgb(226, 226, 226);
 }
 

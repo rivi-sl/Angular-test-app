@@ -4,6 +4,18 @@
     format('ttf');
 }
 
+a {
+    /* color: #0060B6; */
+    text-decoration: none;
+}
+
+a:hover 
+{
+     /* color:#00A0C6;  */
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
 .thema-surya {
     --main-bg-color: rgba(255, 255, 255, 0.8);
     --col-a-bg: #e3e2e2;
@@ -12,7 +24,7 @@
     --navbar-bg: rgb(255, 255, 255);
     --menu-bg: linear-gradient(to bottom, #f8561c, #ee481a, #e43a18, #d92a16, #cf1414);
     --menu-img:linear-gradient(to top, #ff7b00be, #fa6f05be, #f5670abe, #f05e0fbe, #eb5412be), url("../assets/images/loginbg.jpg");
-    --nav-color:black;
+    --nav-color:#121212;
 }
 
 .thema-chandra {
@@ -20,10 +32,11 @@
     --col-a-bg: rgba(0, 0, 0, 0.9);
     --col-b-bg: rgba(14, 14, 14, 0.85);
     --col-c-bg: rgba(60, 60, 60, 0.5);
-    --navbar-bg: rgba(0, 0, 0, 0.9);
+    --navbar-bg: #131212;
     --menu-bg: linear-gradient(to bottom, #f8561c, #ee481a, #e43a18, #d92a16, #cf1414);
-    --menu-img: linear-gradient(to top, #292929de,#313131de,#302e2ede,#3a3636de,#3a3535de), url("../assets/images/loginbg.jpg");
-    --nav-color:white;
+    --menu-img:linear-gradient(to top, #ff7b00be, #fa6f05be, #f5670abe, #f05e0fbe, #eb5412be), url("../assets/images/loginbg.jpg");
+    /* --menu-img: linear-gradient(to top, #292929de,#313131de,#302e2ede,#3a3636de,#3a3535de), url("../assets/images/loginbg.jpg"); */
+    --nav-color:#e43a18;
 }
 
 .si{
@@ -83,7 +96,7 @@
     
 }
 .rk-navitem{
-    color: var(--nav-color);
+    color: var(--nav-color) !important;
 }
 
 .rk-nav-logoholder{

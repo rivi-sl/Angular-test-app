@@ -100,25 +100,25 @@
       </div> -->
       
       <div *ngFor="let messageitem of messageitems | async" class="chats"> 
-          <div *ngIf="messageitem.sentBy; else elseBlock" class="chatout">
+          <div *ngIf="messageitem.sentBy; else elseBlock" class="chatout {{storedTheme}}">
             <span class="material-icons chat-star" *ngIf="messageitem.star">star</span>
             <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
-            <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
-            <span class="timestampout"><i class="material-icons timestamp">access_time</i>{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
+            <span *ngIf='messageitem.message' class="message {{storedTheme}}">{{ messageitem.message }}</span>
+            <span class="timestampout {{storedTheme}}"><i class="material-icons timestamp {{storedTheme}}">access_time</i>{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
           </div>
           <ng-template #elseBlock>
-            <div class="chatin">
+            <div class="chatin {{storedTheme}}">
               <span class="material-icons chat-star" *ngIf="messageitem.star">star</span>
               <img *ngIf='messageitem.image' [src]="messageitem.image" class="chat-img" alt="">
-            <span *ngIf='messageitem.message' class="message">{{ messageitem.message }}</span>
-              <span class="timestampout"><i class="material-icons timestamp">access_time</i>{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
+            <span *ngIf='messageitem.message' class="message {{storedTheme}}">{{ messageitem.message }}</span>
+              <span class="timestampout {{storedTheme}}"><i class="material-icons timestamp {{storedTheme}}">access_time</i>{{ messageitem.sent.toMillis() | date:'h:mm a' }}</span>
             </div>
           </ng-template>
         </div>
       
-      <div class="chatout" *ngIf="chat && !imgSrc">
-        <span class="message">{{ chat }}</span>
-        <span class="timestampout">typing...</span>
+      <div class="chatout {{storedTheme}}" *ngIf="chat && !imgSrc">
+        <span class="message {{storedTheme}}">{{ chat }}</span>
+        <span class="timestampout {{storedTheme}}">typing...</span>
       </div>
 <!-- 
       <div class="chat-star-chatout">
@@ -126,33 +126,33 @@
         <span class="timestampout timestampout-star">You typing...</span>
       </div> -->
 
-      <div class="chatout" *ngIf="imgSrc && imageURL.valid">
+      <div class="chatout {{storedTheme}}" *ngIf="imgSrc && imageURL.valid">
       <span class="material-icons remove-img" (click)="imgclear()">remove_circle</span>
         <img [src]="imgSrc" class="chat-img" alt="">
-        <span class="message">{{ chat }}</span>
-        <span class="timestampout">Click on send to confirm...</span>
+        <span class="message {{storedTheme}}">{{ chat }}</span>
+        <span class="timestampout {{storedTheme}}">Click on send to confirm...</span>
       </div>
     </div>
 
   </div>
 </div>
 
-<div class="sendarea">
+<div class="sendarea {{storedTheme}}">
   <div class="emoji">
-    <span class="material-icons emojipick">emoji_emotions</span>
+    <span class="material-icons emojipick {{storedTheme}}">emoji_emotions</span>
   </div>
   <div class="emoji" (click)="sendStar()">
-    <span class="material-icons star">star</span>
+    <span class="material-icons star {{storedTheme}}">star</span>
   </div>
   <div class="emoji" (click)="fileUploader.click()">
-    <span class="material-icons imgup">image</span>
+    <span class="material-icons imgup {{storedTheme}}">image</span>
   </div>
   <input type="file" accept="image/png,image/jpg,image/jpeg,image/gif" class="upload-image" name="image" autocomplete="off" #fileUploader fromControlName="imageURL" (change)="showImg($event)" />
   
-  <input [(ngModel)]="chat" id="chatinput" (keyup.enter)="sendMessage()" placeholder="Type a message....">
+  <input [(ngModel)]="chat" id="chatinput" class="msginput {{storedTheme}}" (keyup.enter)="sendMessage()" placeholder="Type a message....">
   <!-- (change)="messageChanged()" -->
   <div class="emoji">
-    <span class="material-icons send" (click)="sendMessage()">send</span>
+    <span class="material-icons send {{storedTheme}}" (click)="sendMessage()">send</span>
   </div>
 </div>
 </div>
