@@ -19,7 +19,7 @@
 }
 
 .thema-chandra {
-    --menu-icons: rgb(192, 205, 212);
+    --menu-icons: rgb(255, 255, 255);
     /* --menu-icons-bg: rgb(0, 123, 255); */
     /* --menu-icons-bl: rgba(3, 38, 102, 0.612); */
 
@@ -82,14 +82,5 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .rk-menu-icons a span{
-        font-size: 6vw;
-    }
-    .rk-menu-icons a{
-        border-left: 4px solid var(--menu-icons-bl);
-     }
 
-     .rk-menu-icons a.selected{
-        border-left: 4px solid var(--menu-icons-bl-select);
-    }
   }

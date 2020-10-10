@@ -1,5 +1,13 @@
 .thema-surya {
-  --box-color:rgb(255, 140, 0);
+  --box-color:#ededed;
+  --chatin-bg: #EAF0F1;
+  --chatout-bg: #f1c847;
+  --msg-font: #121212;
+  --box-font: #121212;
+  --sendbox: rgb(223, 223, 219);
+  --msg-input: #fff;
+  --input-icons: #393e41;
+  --input-font: #121212;
 }
 
 /* .thema-surya:hover {
@@ -13,7 +21,15 @@
 } */
 
 .thema-chandra {
-  --box-color:rgba(155, 155, 155, 0.774) ;
+  --box-color:#36393f;
+  --box-font: #fcfafa;
+  --chatin-bg: #262d31;
+  --chatout-bg: #f05e0f;
+  --msg-font: #fcfafa;
+  --sendbox: #36393f;
+  --msg-input: #40444b;
+  --input-icons: #b9bbbe;
+  --input-font: #fcfafa;
 }
 
 /*.thema-chandra:hover {
@@ -36,6 +52,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* border-radius: 0 0 10px 10px; */
+  color: var(--box-font);
+  border-bottom: 1px solid #222222;
+  /* background-image:linear-gradient(to top, #ff7b0067, #fa6f0567, #f5670a67, #f05e0f67, #eb541267); */
   /* justify-content: space-between; */
 }
 
@@ -44,6 +64,7 @@
   border-radius: 10%;
   height: 35px;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .rk-nameplate{
@@ -65,22 +86,18 @@
 }
 
 .rk-chat-area {
-  height: 67.5%;
+  height: 69.5%;
   width: 100%;
   padding: 100px;
   overflow-y: scroll;
   padding: 0;
   margin: 0 auto;
+  /* background-color: #36393f; */
 }
 .material-icons{
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px){
-  .rk-chat-area{
-  height: 60.9%;
-  }
-}
 
 .rk-friend-name{
   font-family: 'Montserrat';
@@ -91,20 +108,26 @@
 
 .rk-chat-area::-webkit-scrollbar {
   width: 7.5px;
+  margin: 2px;
+  padding: 2px;
 }
  
 .rk-chat-area::-webkit-scrollbar-track {
   padding: 10px;
-  background: #f1f1f1; 
+  /* width: 7.5px; */
+  background: #2222228f; 
+  border-radius: 5px;
 }
   
 .rk-chat-area::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #121212; 
+  border-radius: 5px;
+  width: 5px;
 }
 
-.rk-chat-area::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+/* .rk-chat-area::-webkit-scrollbar-thumb:hover {
+  background: #202225;  
+} */
 
 .rk-chat-box {
   width: 100%;
@@ -131,16 +154,17 @@
 }
 
 .rk-name-options{
- flex: 1;
- text-align: right;
+  margin-left: auto;
  margin-right: 10px;
+ color: var(--box-font);
 }
 
 .chatin {
   align-self: flex-start;
   margin: 5px;
   padding: 5px;
-  background-color: rgba(83, 83, 83, 1);
+  /* background-color: #EAF0F1; */
+  background-color: var(--chatin-bg);
   align-items: center;
   border-radius: 10px 10px 10px 0px;
   display: flex;
@@ -157,7 +181,8 @@
   align-self: flex-end;
   margin: 5px;
   padding: 5px;
-  background-color: #cd441a;
+  /* background-color: #cd441a; */
+  background-color: var(--chatout-bg);
   display: table;
   flex-direction: column;
   align-items: center;
@@ -173,7 +198,7 @@
 .message {
   font-size: 12px;
   font-weight: 500;
-  color: white;
+  color: var(--msg-font);
   display: table-row;
   word-wrap: break-word;
   overflow-wrap: anywhere;
@@ -182,8 +207,8 @@
 .timestampin {
   font-size: 9px;
   font-weight: 500;
-  color: white;
-  align-self: flex-start;
+  color: var(--msg-font);
+  /* align-self: flex-start; */
   display: table-row;
 }
 
@@ -191,7 +216,7 @@
   font-family: 'Montserrat';
   font-size: 9px;
   font-weight: 500;
-  color: white;
+  color: var(--msg-font);
   align-self: flex-end;
   display: table-row;
   text-align: right;
@@ -229,53 +254,65 @@
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
-  color: white;
+  /* color: white; */
 }
 
 .material-icons.send{
   transition: 0.5s ease;
+  color: var(--input-icons);
 }
 
 .material-icons.emojipick{
   transition: 0.2s ease;
+  color: var(--input-icons);
 }
 
 .material-icons.star{
   transition: 0.2s ease;
+  color: var(--input-icons);
 }
 
 .material-icons.imgup{
   transition: 0.2s ease;
+  color: var(--input-icons);
 }
 
 .material-icons.emojipick:hover{
-  color: rgb(230, 139, 4);
+  background: -webkit-linear-gradient(left,#D63031, #ee4e04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: scale(1.1) rotateZ(-10deg) ;
 }
 
 .material-icons.star:hover{
-  color: rgb(197, 194, 8);
+  background: -webkit-linear-gradient(left,#D63031, #ee4e04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: scale(1.1) rotateZ(-10deg) ;
 }
 
 .material-icons.imgup:hover{
-  color: rgb(2, 150, 187);
+  background: -webkit-linear-gradient(left,#D63031, #ee4e04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: scale(1.1) rotateZ(-10deg) ;
 }
 
 .material-icons.send:hover{
-  color: green;
+  background: -webkit-linear-gradient(left,#D63031, #ee4e04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: scale(1.1) rotateZ(-45deg) ;
 }
 
 .material-icons.profile{
-  color: black;
+  /* color: black; */
  font-size: 40px;
  margin: 20px;
 }
 
 .material-icons.menu{
-  color: black;
+  /* color: black; */
  font-size: 30px;
  margin-left: 8px;
 
@@ -285,6 +322,7 @@
   font-size: 9px;
   margin: 2px;
   top: 4px;
+  color: var(--msg-font);
   opacity: 0.8;
 }
 
@@ -343,11 +381,14 @@
 
 .chat-star{
   font-size: 4rem;
-  color: white;
+  color: #222;
+  background: -webkit-linear-gradient(left,#D63031, #ee4e04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .timestampout-star{
-  color: black;
+  color: var(--msg-font);
 }
 
 .chat-star-chatout {
@@ -420,14 +461,14 @@
 }
 
 .sendarea {
-  width: 66.7%;
+  width: 70%;
   /* margin: 5px; */
   height: 7.5%;
   display: flex;
   flex-direction: row;
   padding: 5px;
   position: fixed;
-  background-color: rgb(223, 223, 219);
+  background-color: var(--sendbox);
   -webkit-box-shadow: -2px -4px 17px -6px rgba(0,0,0,0.29);
   -moz-box-shadow: -2px -4px 17px -6px rgba(0,0,0,0.29);
   box-shadow: -2px -4px 17px -6px rgba(0,0,0,0.29);
@@ -448,6 +489,11 @@ input {
   font-size: 14px;
   font-weight: 500;
   transition: 0.1s ease;
+}
+
+.msginput{
+  background-color: var(--msg-input);
+  color: var(--input-font);
 }
 
 input:focus,
@@ -486,7 +532,7 @@ button:focus {
 
 .emoji span {
   /* font-size: 170%; */
-  color: #393e41;
+  /* color: #393e41; */
 }
 
 .upload-section{
